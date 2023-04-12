@@ -66,24 +66,61 @@ As a data product, the model itself identifies language but does not provide som
 # Ethical Assessment
 
 In this final section we discuss how the original ethical concern identified can be addressed with the alternative solution developed. This is done in three parts:
-- Evaluate the performance of the model developed for addressing the ethical concern
-- Define an overall ethical response system
+- Evaluate the performance of the data science model developed for addressing the ethical concern
+- Define an overall system for response to the ethical concern identified
 - Identify limitations of the system defined and potential future improvements
 
 
 ## Evalute solution performance
-The original ethical concern is that individuals are discouraged from applying for jobs because of the language used. Specifically this is the case with females being put off by masculine language.
+The original ethical concern is that individuals are discouraged from applying for jobs because of the language used in the advertisement. Specifically this is the case with females being put off by masculine language in job advertisements.
 
-We cannot measure whether the solution makes job ads more appealing to females. We can observe general statistics on language identified and view some specific examples.
+The data science solution developed addresses this by enabling effective identification of this language so that it could be corrected. 
 
-To do this a selection of [1000] job advertisements were selected from the indeed.com dataset. The trained model was applied to identify in each advertisement:
+To properly assess whether this intervention addresses the original ethical concern, it would be best to test whether modified advertisements led to higher appeal to females to apply. Unfortunately this is not something we can measure. 
+
+We can measure though the frequency at which gendered terms are identified. While this does not in itself inform us of whether the ethical concern has been addressed, it does give an indication of the extent to which the data science model could support changing behaviour. 
+
+In addition to this, we can also perform a manual inspection of several job advertisements and the gendered language identified in them. While this does not systematically show the likely response, it will give the reader a sense of how effective the solution is at identifying language that is likely to influence readers of job advertisements.
+
+
+
+### Prevalence of gendered language
+To do this [1000] job advertisements were randomly selected from the indeed.com dataset. The NER model trained was applied to identify the masculine and feminine terms in each advertisement. Following this, the below summary statistics were calculated for each job advertisement.
 - the total masculine words/phrases
 - the total feminine words/phrases
-- pct of words in description that are masculine
-- pct of words in description that are feminine
+- the percentage of words in the job description that are masculine
+- the percentage of words in the job description that are feminine
 
-On this interpretation, we would make a difference by applying the model if the amount of masculine words were reduced. A total of NNNN jobs included masculine words, indicating that we could make NN% many jobs more appealing. 
+Out of 1000 jobs:
+- NNNN were found to have masculine words
+- NNNN were found to have more masculine words than feminine words
+
+While it cannot be concluded if this is 'good', it does indicate that there is substantial opportunity to identify 
 
 While this overall assessment indicates the potential for improvement, it is not certain that removal or replacement of masculine terms will result in improvement. To get a sense of this, we can inspect a few results.
 
+(this could be made to be more targeted at just identifying the prevalence of gendered language).
+
 We look at the top 3 masculine.
+
+
+### Effectiveness of identified language
+
+A qualitative assessment of specific examples can be made to understand the degree to which the ethical concern is addressed. 
+
+
+## Overall Ethical Response
+While the model developed assists with identifying gendered language, it isn't enough as an entire system to address the original ethical concern. We are seeking to bring about changes in action, just wording changes is not going 
+
+What we will also want in the overall system:
+- Recommendations for alternative wording in advetisements
+- Identification of attempts to cheat the wording
+- Can't just remove masculine terms, sometimes these will be necessary
+
+
+
+
+## Limitations
+There are several limitations:
+- Underlying bias in perceptions about job advertisements
+- Sensitivity to industry needs to be included
