@@ -72,41 +72,47 @@ In this final section we discuss how the original ethical concern identified can
 
 
 ## Evalute solution performance
-The original ethical concern is that individuals are discouraged from applying for jobs because of the language used in the advertisement. Specifically this is the case with females being put off by masculine language in job advertisements.
+The original ethical concern is that individuals are discouraged from applying for jobs because of the language used in the advertisement. Specifically this is the case with females being dissuaded by masculine language in job advertisements.
 
-The data science solution developed addresses this by enabling effective identification of this language so that it could be corrected. 
+The data science solution developed addresses this by enabling identification of this language so that it could be corrected prior to advertising the job. 
 
 To properly assess whether this intervention addresses the original ethical concern, it would be best to test whether modified advertisements led to higher appeal to females to apply. Unfortunately this is not something we can measure. 
 
-We can measure though the frequency at which gendered terms are identified. While this does not in itself inform us of whether the ethical concern has been addressed, it does give an indication of the extent to which the data science model could support changing behaviour. 
+We can measure instead though how effective the solution is at identifying gendered language. This can be done in two ways. First we can benchmark overall peformance against what previous studies have found in terms for the prevalence of gendered language. We can find if we are identifying at higher or lower rates. Second we can benchmark against existing bias identification tools. This will help us assess performance of the solution on individual ads.
 
 In addition to this, we can also perform a manual inspection of several job advertisements and the gendered language identified in them. While this does not systematically show the likely response, it will give the reader a sense of how effective the solution is at identifying language that is likely to influence readers of job advertisements.
 
 
 
-### Prevalence of gendered language
+### Effectiveness of identifying gendered language
+To assess the effecriveness of the model developed for identifying gendered language, we will first benchmark against existing efforts to identify gendered language.
+
 To do this [1000] job advertisements were randomly selected from the indeed.com dataset. The NER model trained was applied to identify the masculine and feminine terms in each advertisement. Following this, the below summary statistics were calculated for each job advertisement.
 - the total masculine words/phrases
 - the total feminine words/phrases
 - the percentage of words in the job description that are masculine
 - the percentage of words in the job description that are feminine
 
-Out of 1000 jobs:
-- NNNN were found to have masculine words
-- NNNN were found to have more masculine words than feminine words
 
-While it cannot be concluded if this is 'good', it does indicate that there is substantial opportunity to identify 
+#### Benchmarking against existing research/Effectiveness of identifying language
+From this we calculauted the prevalence of gendered language across the entire corpus. Out of 1000 jobs:
+- NNNN (XX%) were found to have masculine words
+- NNNN (XX%) were found to have more masculine words than feminine words
 
-While this overall assessment indicates the potential for improvement, it is not certain that removal or replacement of masculine terms will result in improvement. To get a sense of this, we can inspect a few results.
+Previous research has inspected the prevalence of gendered bias in job advertisements. In particular [this study] found that around XX% of job advertisements contained gendered language.
 
-(this could be made to be more targeted at just identifying the prevalence of gendered language).
+[This study] found that XX% of job advertisements contained gendered language.
 
-We look at the top 3 masculine.
+In comparison, we can see that the solution developed here identifies language at a [higher/lower/same] rate.
 
-
+ 
 ### Effectiveness of identified language
+While the above tells us that the rate at which the model is identifying gendered language is in line with what previous studies have found in terms of the prevalence of gendered language, we cannot conclude that the model is identifying the correct language.
 
-A qualitative assessment of specific examples can be made to understand the degree to which the ethical concern is addressed. 
+To perform a qualitative assesssment we can inspect the results the model produces for individual ads to see if the results align with what we might expect. Further to this, we can also benchmark the performance of this model against existing tools for identifying gendered language in advertisements. 
+
+
+A more comprehensive assessment with subject matter experts would be desired here, but I am just one person!
 
 
 ## Overall Ethical Response
