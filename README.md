@@ -85,25 +85,49 @@ In addition to this, we can also perform a manual inspection of several job adve
 
 
 ### Effectiveness of identifying gendered language
-To assess the effecriveness of the model developed for identifying gendered language, we will first benchmark against existing efforts to identify gendered language.
+To assess the effectiveness of the model developed for identifying gendered language, we first benchmark against previous efforts to identify gendered language in job advertisements. Specificall
 
-To do this [1000] job advertisements were randomly selected from the indeed.com dataset. The NER model trained was applied to identify the masculine and feminine terms in each advertisement. Following this, the below summary statistics were calculated for each job advertisement.
-- the total masculine words/phrases
-- the total feminine words/phrases
+To do this [1000] job advertisements were randomly selected from the indeed.com dataset. The NER model trained was applied to identify masculine and feminine terms in each advertisement. Following this, the below summary statistics were calculated for each job advertisement.
+- the total masculine terms identified in the advertisement
+- the total feminine terms identified in the advertisement
 - the percentage of words in the job description that are masculine
 - the percentage of words in the job description that are feminine
+- a gender-bias 'push-pull' score (see below)
+- gender tone score (see below)
 
 
-#### Benchmarking against existing research/Effectiveness of identifying language
-From this we calculauted the prevalence of gendered language across the entire corpus. Out of 1000 jobs:
-- NNNN (XX%) were found to have masculine words
-- NNNN (XX%) were found to have more masculine words than feminine words
+#### Effectiveness of identifying gendered language
+From the above, we calculauted the prevalence of gendered language across the entire corpus of job advertisements. Out of 1000 job advertisements:
+- NNNN (97%) were found to have masculine words
+- NNNN (100%) were found to have more masculine words than feminine words
+- The average proportion of words in an advertisement that are masculine is 1.3%
+- The average proportion of words in an advertisement that are feminine is 1.2%
 
-Previous research has inspected the prevalence of gendered bias in job advertisements. In particular [this study] found that around XX% of job advertisements contained gendered language.
+Previous research has inspected the prevalence of gendered bias in job advertisements. Gaucher et. al. 2011 completed an analysis of the prevalence of gendered language in job advertisements. Their study found that there was an average of approximately 1.0% of words being masculine in job advertisements, while the average for feminine wording is 0.6%. In comparison to this, the model developed for this assignment predicts somewhat in line with the expected average percentage for masculine. However it is predicting at half the rate for feminine language, suggesting it is potentially over identifying.
 
-[This study] found that XX% of job advertisements contained gendered language.
+A 2020 study by Bohm et. al. analysed gender bias in IT job postings in Germany. This study measured gender bias according to its own scoring. This scoring measured masculine and feminine wording (push and pull) into a single overall score for advertisement. The score was on a scale of 0 to 1 with neutral descriptions getting a score of 0.5, the higher the score the more feminine and lower scores are more masculine. This study produced an average score of 0.3779666666666666. My algorithm produced an average score of 0.506. 
 
-In comparison, we can see that the solution developed here identifies language at a [higher/lower/same] rate.
+In addition, this study examined the most common key words. The table below shows this.
+
+| Masculine   | Prop | Feminine      | Prop |
+|-------------|------|---------------|------|
+| Ability     | 35%  | Involvement   | 32%  |
+| Analysis    | 15%  | Creativity    | 24%  |
+| Flexibility | 9%   | Communication | 12%  |
+
+In comparison the algorithm I developed produced the below result.
+
+| Masculine   | Prop | Feminine      | Prop |
+|-------------|------|---------------|------|
+| Ability     | 35%  | Involvement   | 32%  |
+| Analysis    | 15%  | Creativity    | 24%  |
+| Flexibility | 9%   | Communication | 12%  |
+
+
+A final study we can benchmark against is a 2017 study by Tang et. al. that conducted a longitudinal analysis of biased language in job advertisements. This study examined job advertisements from LinkedIn over a 10 year period, in particular they examined longitudinal trends in biased language in job advertisements. Scores are on a scale from -1 to 1. 0 is neutratl while negative is masculine skewed. Their most recent year found that the gender tone was more masculine skewed with a score of approximately -0.4. My algorithm produced a score of XX.
+
+
+In comparison, we can see that the solution developed here identifies language at a [higher/lower/same] rate in comparison to previous studies on the topic.
 
  
 ### Effectiveness of identified language
