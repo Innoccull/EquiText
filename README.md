@@ -131,31 +131,45 @@ In comparison the mode for this assignment produced the result below in terms of
 ### Effectiveness of identified language
 While the above tells us how effective the model is at identifying gendered language as benchmarked against previous research, we will also benefit from an inspection of some examples of the predictions made to get a better sense of the model's performance. To do this, we inspect the top 3 masculine and feminine advertisements in terms of the gender target score.
 
-<img src="./masc_1.svg"/>
-
+![](assets/displacy_images/masc_1.svg)
 
 There are several observations we can make about the job advertisements.
 
 There appears to be what could be considered many false positives in terms of gendered language. For example, the most masculine advertisements identifies the term 'Logic' repeatedly as a masculine term. While this is gendered language, in context it is in the name of the organisation. The presence of this language may affect the sense of belongingness in the organisation (since the name represents what the organisation is about), this assumption should be tested. 
 
+It appears there could be confusion when there is a difference in descriving the attributes of the person versus nouns. For example, the second example shows the use of the word 'lead' is used in two senses. First it describes attributes of the applicant as needing to lead. However it is also used to describe 'lead generation'. It seems like the former will be more relevant for a sense of belongingness as opposed to the latter.
+
+There are extremely common terms that appear necessary and almost unavoidable in job advertisements. For example, 'ability'. 
+
+Other common terms while unavoidable, could be discouraging. For example, use of the term data may make the position appear more technical. However, this perhaps should be presented as it is a requirement for ability to do the job and may not discourage females who do have a more technical bent. Could more technical skills that relate to aptitude should not change (though personal attributes/styles could be open).
+
+The top feminine jobs interestingly show a complete absence of masculine words which maximises the gender target to be completely feminine. 
 
 
+Overall, there would need to be refinement. This primarily relates to understanding when terms are used to describe the applicant or their duties versus the name of something. 
 
 
 ## Overall Ethical Response
-While the model developed assists with identifying gendered language, it isn't enough as an entire system to address the original ethical concern. We are seeking to bring about changes in action, just wording changes is not going 
+While the model developed assists with identifying gendered language, it alone isn't enough as a system to address the original ethical concern. Bias and discrimination in the recruitment process manifests in different ways. Typically the process will involve: 
+- an advertising phase where an employer will prepare an advertisement for a role, advertise it in their chosen medium and applicants will apply
+- a selection phase where an employer will review applicants, interview a select amount and then make a final selection of who to employ
 
-What we will also want in the overall system:
-- Recommendations for alternative wording in advetisements
-- Identification of attempts to cheat the wording
-- Can't just remove masculine terms, sometimes these will be necessary
+The model developed here targets the first part of the process by identifying language that can discourage applicants, however the evaluation above shows that in order to change action this would need to be supplemented in several ways.
+
+First the solution would need to recommend alternative wording to enable those crafting job advertisements to be able to create improved wording. In addition to this, it would be ideal if the solution provided some rationale or explanation as to the effect of the specific language identified to assist with educating users so that they would be better equipped to identify this language themselves in the future.
+
+Secondly we will need to the solution to consider not just removing masculine terms. This might result in some incomplete ads as noted above some terms are necessary.
 
 
+There are other changes we can make to the overall process:
+- Where positions are advertised
+- 
 
 
 ## Limitations
 There are several limitations:
 - Underlying bias in perceptions about job advertisements
 - Sensitivity to industry needs to be included
+- Other types of discrimination, we aren't addressing everything
 - Effort based assessments?
 - Conditional superlatives?
