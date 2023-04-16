@@ -131,10 +131,14 @@ In comparison the mode for this assignment produced the result below in terms of
 ### Effectiveness of identified language
 While the above tells us how effective the model is at identifying gendered language as benchmarked against previous research, we will also benefit from an inspection of some examples of the predictions made to get a better sense of the model's performance. To do this, we inspect the top 3 masculine and feminine advertisements in terms of the gender target score.
 
-![image info](./masc_1.svg)
-<img src="./masc_1.svg">
+<img src="./masc_1.svg"/>
 
-There are several observations we can make about the job ad
+
+There are several observations we can make about the job advertisements.
+
+There appears to be what could be considered many false positives in terms of gendered language. For example, the most masculine advertisements identifies the term 'Logic' repeatedly as a masculine term. While this is gendered language, in context it is in the name of the organisation. The presence of this language may affect the sense of belongingness in the organisation (since the name represents what the organisation is about), this assumption should be tested. 
+
+
 
 
 
