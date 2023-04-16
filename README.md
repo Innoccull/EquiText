@@ -87,35 +87,31 @@ In addition to this, we can also perform a manual inspection of several job adve
 ### Effectiveness of identifying gendered language
 To assess the effectiveness of the model developed for identifying gendered language, we first benchmark against previous efforts to identify gendered language in job advertisements. Specificall
 
-To do this [1000] job advertisements were randomly selected from the indeed.com dataset. The NER model trained was applied to identify masculine and feminine terms in each advertisement. Following this, the below summary statistics were calculated for each job advertisement.
+To do this [1000] job advertisements were randomly selected from the indeed.com dataset. The NER model trained was applied to identify masculine and feminine terms in each advertisement. Following this, the below metrics were calculated for each job advertisement.
 - the total masculine terms identified in the advertisement
 - the total feminine terms identified in the advertisement
 - the percentage of words in the job description that are masculine
 - the percentage of words in the job description that are feminine
-- a gender-bias 'push-pull' score (see below)
-- gender tone score (see below)
+- a gender target score
 
+These metrics are used in several studies examining gendered language
 
 #### Effectiveness of identifying gendered language
 From the above, we calculauted the prevalence of gendered language across the entire corpus of job advertisements. Out of 1000 job advertisements:
 - NNNN (97%) were found to have masculine words
-- NNNN (100%) were found to have more masculine words than feminine words
+- NNNN (100%) were found to have feminine words
+- NNNN (X%) were found to have more masculine words than feminine words
 - The average proportion of words in an advertisement that are masculine is 1.3%
 - The average proportion of words in an advertisement that are feminine is 1.2%
+- The average gender target score is 0.38.
 
-Previous research has inspected the prevalence of gendered bias in job advertisements. Gaucher et. al. 2011 completed an analysis of the prevalence of gendered language in job advertisements. Their study found that there was an average of approximately 1.0% of words being masculine in job advertisements, while the average for feminine wording is 0.6%. In comparison to this, the model developed for this assignment predicts somewhat in line with the expected average percentage for masculine. However it is predicting at half the rate for feminine language, suggesting it is potentially over identifying.
+The study completed by Gaucher et. al. 2011 examined the prevalence of gendered language in job advertisements and its impact on prospective applicants. Their study found that the average proportion of words in a job advertisement that are masculine is approximately 1.0%. For feminine words this is 0.6%. In comparison to this, the model developed for this assignment predicts somewhat in line with the expected average percentage for masculine words (1.0%). However, the model performs differently for feminine words where it predicts at twice the rate (1.2%), suggesting it is potentially over identifying feminine language in job advertisements.
 
-A 2020 study by Bohm et. al. analysed gender bias in IT job postings in Germany. This study measured gender bias according to its own scoring. This scoring measured masculine and feminine wording (push and pull) into a single overall score for advertisement. The score was on a scale of 0 to 1 with neutral descriptions getting a score of 0.5, the higher the score the more feminine and lower scores are more masculine. This study produced an average score of 0.3779666666666666. My algorithm produced an average score of 0.506. 
+A gender target score provides a more generalised metric. This metric has been applied in two pieces of research examined (Bohm et. al. and Tang et. al.) for this assignment. This approach measures gender bias according to a gender 'push-pull' score. This scoring approach defines maschuline terms as push words (i.e. would discourage applicants) and feminine words as pull words (i.e. would attract applicants). For the gender target score, feminine and masculine words cancel each other out with a final count being in surplus of masculine or feminine words. A sigmoid function is applied to the remaining words to produce a number in the range of 0 to 1. A neutral descriptions would receive a score of 0.5. The higher the score the more feminine the advertisement was with lower scores representing more masculine advertisements. 
 
-In addition, this study examined the most common key words. The table below shows this.
+The studies in question For the job advertisements assessed in this, there was an average score of 0.38 in the Bohm study and an average of 0.475 for the Tang study. Both these scores show a more masculine lean to the language in the job advertisements examined. The algorithm produced for this assignment produced an average score of 0.506. This logically follows from the previous assessment where feminine words appear to being more commonly identified.
 
-| Masculine   | Prop | Feminine      | Prop |
-|-------------|------|---------------|------|
-| Ability     | 35%  | Involvement   | 32%  |
-| Analysis    | 15%  | Creativity    | 24%  |
-| Flexibility | 9%   | Communication | 12%  |
-
-In comparison the algorithm I developed produced the below result.
+In addition, this study also examined the most common key words in advertisement which gives another benchmark to assess against. The table below shows the most common masculine and feminine words and the proportion of identified words they make up.
 
 | Masculine   | Prop | Feminine      | Prop |
 |-------------|------|---------------|------|
@@ -123,20 +119,23 @@ In comparison the algorithm I developed produced the below result.
 | Analysis    | 15%  | Creativity    | 24%  |
 | Flexibility | 9%   | Communication | 12%  |
 
+In comparison the mode for this assignment produced the result below in terms of most common terms.
 
-A final study we can benchmark against is a 2017 study by Tang et. al. that conducted a longitudinal analysis of biased language in job advertisements. This study examined job advertisements from LinkedIn over a 10 year period, in particular they examined longitudinal trends in biased language in job advertisements. Scores are on a scale from -1 to 1. 0 is neutratl while negative is masculine skewed. Their most recent year found that the gender tone was more masculine skewed with a score of approximately -0.4. My algorithm produced a score of XX.
-
-
-In comparison, we can see that the solution developed here identifies language at a [higher/lower/same] rate in comparison to previous studies on the topic.
+| Masculine   | Prop | Feminine      | Prop |
+|-------------|------|---------------|------|
+| Ability     | 34%  | Work          | 28%  |
+| Data        | 8%   | Service       | 19%  |
+| Able        | 6%   | Support       | 9%  |
 
  
 ### Effectiveness of identified language
-While the above tells us that the rate at which the model is identifying gendered language is in line with what previous studies have found in terms of the prevalence of gendered language, we cannot conclude that the model is identifying the correct language.
+While the above tells us how effective the model is at identifying gendered language as benchmarked against previous research, we will also benefit from an inspection of some examples of the predictions made to get a better sense of the model's performance. To do this, we inspect the top 3 masculine and feminine advertisements in terms of the gender target score.
 
-To perform a qualitative assesssment we can inspect the results the model produces for individual ads to see if the results align with what we might expect. Further to this, we can also benchmark the performance of this model against existing tools for identifying gendered language in advertisements. 
+![image info](./masc_1.svg)
+<img src="./masc_1.svg">
 
+There are several observations we can make about the job ad
 
-A more comprehensive assessment with subject matter experts would be desired here, but I am just one person!
 
 
 ## Overall Ethical Response
@@ -154,3 +153,5 @@ What we will also want in the overall system:
 There are several limitations:
 - Underlying bias in perceptions about job advertisements
 - Sensitivity to industry needs to be included
+- Effort based assessments?
+- Conditional superlatives?
