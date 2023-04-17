@@ -150,7 +150,9 @@ Overall, there would need to be refinement. This primarily relates to understand
 
 
 ## Overall Ethical Response
-While the model developed assists with identifying gendered language, it alone isn't enough as a system to address the original ethical concern. Bias and discrimination in the recruitment process manifests in different ways. Typically the process will involve: 
+While the model developed assists with identifying gendered language, it alone isn't enough as a system to address the original ethical concern. Defining an overall ethical response identifies what further would need to be put in place to fully address the ethical concern identified.
+
+Bias and discrimination in the recruitment process manifests in different ways. Typically the process involves: 
 - an advertising phase where an employer will prepare an advertisement for a role, advertise it in their chosen medium and applicants will apply
 - a selection phase where an employer will review applicants, interview a select amount and then make a final selection of who to employ
 
@@ -160,16 +162,26 @@ First the solution would need to recommend alternative wording to enable those c
 
 Secondly we will need to the solution to consider not just removing masculine terms. This might result in some incomplete ads as noted above some terms are necessary.
 
-
-There are other changes we can make to the overall process:
-- Where positions are advertised
-- 
-
+There are a number of other measures that can be taken to create a holistic solution to mitigate bias. This includes anonymising the application process, advertise in media targeted for all audiences, increasing the use of more objective interview techniques (e.g. competence based interviews) or undertaking unconscious bias training for those who are involved in the hiring process.
 
 ## Limitations
-There are several limitations:
-- Underlying bias in perceptions about job advertisements
-- Sensitivity to industry needs to be included
-- Other types of discrimination, we aren't addressing everything
-- Effort based assessments?
-- Conditional superlatives?
+There are a number of limitations with the solution outlines above in addressing the ethical concern identified in this discussion.
+
+Research has found that one of the primary drivers in underlying bias about which types of jobs are more sutied for men versus women. While wording may help to soften the image of a job, the underlying biases in the individual applicants is likely enough to discourage applicants.
+
+The analysis here does not take into account industry.
+
+There are other types of discrimination. 
+
+This is only punitive. It is telling people what not to say but does not help with what to say.
+
+As noted above, it is not fully sensitive to the context in which terms are used. Sometimes the terms are used in a neutral or positive way that may no impact on belongingness (e.g. listing equal opportunity attributes which are actually positive mentions).
+
+Gender bias can be built into word embeddings (how does this affect my solution).
+
+There is other potentially gendered language that is not included here. This includes specifically conditional superlatives. it also includes effort based assessments.
+
+Finally, we should consider if some jobs are gendered.
+
+## Conclusion
+To be completed.
