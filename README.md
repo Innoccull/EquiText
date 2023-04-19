@@ -6,19 +6,31 @@ The goal of this project is to design a system that improves job advertisements 
 
 
 ## Ethical concern
-There is evidence that gendered language in job advertisements affects who applies. The affect of this gendered language on applicants is to create a decreased sense of belongingness with regard to the job which in turn decreases the appeal of the job to potential applicants.
+There is evidence that gendered language in job advertisements affects who applies [Gauthier Research]. The research shows that gendered language in job advertisements causes prospective applicants to have a decreased sense of belongingness in relation to the job advertised. This decreased sense of belongingness in turn decreases the appeal of the job to potential applicants.
 
-There are several impacts of this. Firstly, for potential candidates it can limit the opportunities available to them. This is caused by the use of language that may make a job opportunity appear to them as something that they don't belong in. This limits the perceived opportunities available to individuals, in effect limiting their future earning and career prospects.
+There are several impacts of this. Firstly, it restricts opportunities for potential applicants. This limits the perceived opportunities available to individuals, in effect limiting their future earning and career prospects.
 
 A second impact is on employers themselves. Producing job applications that can exclude some applicnts can lead to a less diverse pool of applicants to choose from in the selection process. 
 
 ## Response
-The key ethical concern is that the use of certain language in job advertisements can reduce opportunities for individuals and limit the pool of applicants for employers. To address this concern, we would want a response that enables the production of job advertisements that do not include language that reduces an applicant's sense of belongingness with a position. The change in action we are trying to create is to change the wording of published job advertisements.
+To address this concern, we would want a response that enables the production of job advertisements that do not include gendered language which reduces an applicant's sense of belongingness with a position.
 
-To do this, this projects creates a named entity recognition model that detects language in job advertisements that can discourage applicants. This data science approach alone is not sufficient though to create the desired change in action. We therefore look beyond this model itself to understand how it can be applied in practice along with other interventions, to create the desired change in behaviour that addresses the ethical concern identified.
+This project develops a named entity recognition (NER) model to detect gendered language in job ads and assign a 'gender target' score indicating masculine, feminine, or neutral tones. However, the data science approach alone is not enough to drive change. The project also considers practical applications and other interventions to address the ethical concern and promote desired behavioral change.
 
 ## Evaluating performance
-How do we measure if the ethical concern has been addressed?
+To be able to understand our success in addressing the ethical concern, we need to define some metrics that our solution will be assessed against. 
+
+The original ethical concern is that individuals are discouraged from applying for jobs because of the language used in the advertisement. Specifically this is the case with females being dissuaded by masculine language in job advertisements.
+
+The data science solution developed addresses this by enabling identification of this language so that it could be corrected prior to advertising the job. 
+
+To properly assess whether this intervention addresses the original ethical concern, it would be best to test whether modified advertisements led to higher appeal to females to apply. Unfortunately this is not something we can measure. 
+
+We can measure instead though how effective the solution is at identifying gendered language. This can be done in two ways. First we can benchmark overall peformance against what previous studies have found in terms for the prevalence of gendered language. We can find if we are identifying at higher or lower rates. Second we can benchmark against existing bias identification tools. This will help us assess performance of the solution on individual ads.
+
+In addition to this, we can also perform a manual inspection of several job advertisements and the gendered language identified in them. While this does not systematically show the likely response, it will give the reader a sense of how effective the solution is at identifying language that is likely to influence readers of job advertisements.
+
+
 
 # Methodology
 
