@@ -184,7 +184,19 @@ Overall, there would need to be refinement. This primarily relates to understand
 ### Generative AI examples
 Finally, to test model performance we use generative AI (Chat-GPT) to create masculine, feminine and neutral versions of job advertisements for three different professions (real estate, mechanic and early childhood teacher). These professions were chosen specifically as they represent largely gender neutral (real estate agent), masculine  (mechanic) and feminine (early childhood teacher) professions. We will use the gender score defined above to determine if the model is correctly scoring advertisements in line with what we expect.
 
-Table of findings for each advertisement.
+The table below presents the results.
+
+| Job Type                | Language Type | Gender target Score |
+|-------------------------|---------------|---------------------|
+| Real estate agent       | masculine     | 0.44                |
+| Real estate agent       | feminine      | 0.50                |
+| Real estate agent       | neutral       | 0.43                |
+| Mechanic                | masculine     | 0.48                |
+| Mechanic                | feminine      | 0.52                |
+| Mechanic                | neutral       | 0.56                |
+| Early childhood teacher | masculine     | 0.55                |
+| Early childhood teacher | feminine      | 0.56                |
+| Early childhood teacher | neutral       | 0.55                |
 
 
 
@@ -251,6 +263,7 @@ There is room for future improvement of the model, including:
 - Providing recommendations for alternative wording
 - Being more sensitive to the context in which masculine and feminine terms are used
 - Taking into account a wider range of terms
+= Weighting terms
 - Further?
 
 Finally, there are limitations to note. These are them. But remember, this is indicative of technology solutions are no the be all and end all. 

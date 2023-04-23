@@ -1,19 +1,237 @@
-position,type,advertisement
-real_estate_agent,masculine,"Company: Elite Properties Realty
-Description: Join Elite Properties Realty, a leading real estate agency with a reputation for excellence. We are seeking an ambitious and results-driven real estate agent to join our high-performing team. As a real estate agent with Elite Properties Realty, you will be responsible for prospecting, listing, and selling properties, providing exceptional customer service, and negotiating contracts. You will leverage your sales skills, market knowledge, and networking abilities to exceed sales targets and build lasting client relationships. Duties include property listings, showings, contract negotiations, and client management."
-real_estate_agent,feminine,"Company: Premier Homes Realty
-Description: Be part of Premier Homes Realty, a well-respected real estate agency known for its personalized service. We are seeking a motivated and detail-oriented real estate agent to join our dedicated team. As a real estate agent with Premier Homes Realty, you will be responsible for prospecting, listing, and selling properties, providing exceptional customer service, and negotiating contracts. You will leverage your excellent communication skills, market knowledge, and relationship-building abilities to exceed sales targets and create lasting client connections. Duties include property listings, showings, contract negotiations, and client management."
-real_estate_agent,neutral,"Company: Realty Experts
-Description: Join Realty Experts, a progressive and inclusive real estate agency that values diversity and inclusivity. We are looking for a skilled and motivated real estate agent to join our dynamic team. As a real estate agent with Realty Experts, you will be responsible for prospecting, listing, and selling properties, providing exceptional customer service, and negotiating contracts. You will leverage your sales skills, market knowledge, and networking abilities to exceed sales targets and build lasting client relationships. Duties include property listings, showings, contract negotiations, and client management."
-mechanic,masculine,"Company: Pro Auto Repairs
-Description: Join Pro Auto Repairs, a well-established auto repair shop with a reputation for quality work. We are seeking an experienced and skilled mechanic to join our team of automotive experts. As a mechanic with Pro Auto Repairs, you will be responsible for diagnosing, repairing, and maintaining vehicles, ensuring top-notch performance and safety. You will leverage your technical expertise, problem-solving skills, and attention to detail to provide exceptional service to our valued customers. Duties include conducting repairs, performing diagnostics, and maintaining accurate records."
-mechanic,feminine,"Company: Auto Care Solutions
-Description: Be part of Auto Care Solutions, a reputable auto repair shop known for its excellent service. We are seeking a qualified and skilled female mechanic to join our team of automotive professionals. As a mechanic with Auto Care Solutions, you will be responsible for diagnosing, repairing, and maintaining vehicles, ensuring optimal performance and safety. You will leverage your technical expertise, problem-solving skills, and attention to detail to provide exceptional service to our valued customers. Duties include conducting repairs, performing diagnostics, and maintaining accurate records."
-mechanic,neutral,"Company: Automotive Experts
-Description: Join Automotive Experts, a progressive and inclusive auto repair shop that values diversity and equal opportunities. We are looking for a qualified and skilled mechanic to join our team of automotive professionals. As a mechanic with Automotive Experts, you will be responsible for diagnosing, repairing, and maintaining vehicles, ensuring top-notch performance and safety. You will leverage your technical expertise, problem-solving skills, and attention to detail to provide exceptional service to our valued customers. Duties include conducting repairs, performing diagnostics, and maintaining accurate records."
+position,type,description
+real_estate_agent,masculine,"Company: Elite Homes Realty
+Description: Elite Homes Realty, a prestigious real estate agency with a proven track record in the industry, is seeking a highly motivated and skilled real estate agent to join our elite team. As a real estate agent at Elite Homes Realty, you will have the opportunity to showcase your expertise in the real estate market, connect with clients, and help them achieve their buying, selling, and renting goals. Join us in shaping the future of real estate in our community.
+Responsibilities:
+
+Develop and maintain strong relationships with clients, understand their unique real estate needs, and provide personalized guidance throughout the buying, selling, or renting process.
+Conduct in-depth market research, analyze property values, and provide expert advice on pricing, negotiation, and marketing strategies to achieve optimal outcomes for clients.
+Create and present compelling property listings, conduct property showings, and host open houses to attract potential buyers or tenants.
+Prepare and review complex purchase contracts, lease agreements, and other legal documents, ensuring accuracy and compliance with relevant laws and regulations.
+Lead negotiations and counteroffers on behalf of clients, overseeing the closing process to ensure smooth and successful transactions.
+Stay abreast of real estate market trends, property values, and industry regulations through continuous professional development and market analysis.
+Utilize innovative marketing strategies, cutting-edge tools, and technologies to promote properties, generate leads, and expand client base.
+Provide exceptional customer service, promptly responding to client inquiries, addressing concerns, and providing professional advice and guidance.
+Collaborate effectively with fellow team members, lenders, attorneys, and other stakeholders to ensure seamless real estate transactions.
+Maintain meticulous records of client interactions, transactions, and other business activities using the company's CRM and other software tools.
+Qualifications:
+
+Valid real estate license in the state of employment.
+Proven track record as a successful real estate agent or related role.
+In-depth knowledge of real estate laws, regulations, and market trends.
+Excellent communication, negotiation, and interpersonal skills.
+Ability to work independently, manage time effectively, and multitask.
+Strong problem-solving skills and adaptability in a dynamic market.
+Customer-centric mindset with a focus on providing top-notch service.
+Proficiency in using real estate software, CRM, and other industry tools.
+Commitment to maintaining professionalism, integrity, and confidentiality in all business dealings."
+real_estate_agent,feminine,"
+Company: Stellar Properties Group
+Description: Stellar Properties Group is a leading real estate agency that is passionate about creating a diverse and inclusive environment where everyone can thrive. We are seeking a highly skilled and experienced real estate agent who is dedicated to providing exceptional service to our clients while promoting equality and empowerment in the industry. Join our dynamic team and make a meaningful impact in the lives of our clients and community.
+
+Role:
+As a real estate agent at Stellar Properties Group, you will play a pivotal role in helping clients achieve their real estate goals, whether it's buying, selling, or renting properties. You will be responsible for building and maintaining strong relationships with clients, conducting market research, creating compelling property listings, negotiating offers, and overseeing transactions from start to finish. With your expertise in the real estate market and exceptional customer service skills, you will be an invaluable asset to our team and clients alike.
+
+Responsibilities:
+
+Develop and maintain meaningful relationships with clients, actively listening to their unique real estate needs, and providing compassionate guidance throughout the buying, selling, or renting process.
+Conduct comprehensive market research, assess property values, and offer expert advice on pricing, negotiation, and marketing strategies to fulfill the diverse needs of clients.
+Create and present compelling property listings, conduct property showings, and create welcoming open house experiences to attract potential buyers or tenants.
+Prepare and review complex purchase contracts, lease agreements, and other legal documents, ensuring accuracy and compliance with relevant laws and regulations.
+Lead negotiations and counteroffers on behalf of clients, overseeing the closing process with empathy and care to ensure successful transactions.
+Stay updated with real estate market trends, property values, and industry regulations through continuous professional development and market analysis.
+Utilize innovative marketing strategies, cutting-edge tools, and technologies to promote properties, generate leads, and expand client base.
+Provide exceptional customer service, promptly responding to client inquiries, addressing concerns, and providing professional advice and guidance with a focus on empathy and understanding.
+Collaborate effectively with fellow team members, lenders, attorneys, and other stakeholders to ensure seamless real estate transactions.
+Maintain meticulous records of client interactions, transactions, and other business activities using the company's CRM and other software tools.
+Qualifications:
+
+Valid real estate license in the state of employment.
+Proven track record as a successful real estate agent or related role.
+In-depth knowledge of real estate laws, regulations, and market trends.
+Excellent communication, negotiation, and interpersonal skills.
+Ability to work independently, manage time effectively, and multitask.
+Strong problem-solving skills and adaptability in a dynamic market.
+Customer-centric mindset with a focus on providing top-notch service.
+Proficiency in using real estate software, CRM, and other industry tools.
+Commitment to maintaining professionalism, integrity, and confidentiality in all business dealings.
+At Stellar Properties Group, we value diversity and inclusion and are committed to providing equal opportunities for all employees and applicants. We encourage applicants of all genders, races, ethnicities, religions, sexual orientations, and abilities to apply. Join us in our mission to make a positive impact in the real estate industry and empower our clients to achieve their real estate dreams."
+real_estate_agent,neutral,"Company: Dream Homes Realty
+Description: Dream Homes Realty is a reputable real estate agency that prides itself on providing exceptional service to our clients in finding their dream homes. We are currently seeking a skilled and motivated real estate agent to join our dynamic team. As a real estate agent at Dream Homes Realty, you will play a crucial role in helping clients buy, sell, and rent properties, while providing exceptional customer service and maintaining a high level of professionalism.
+Responsibilities:
+
+Build and maintain relationships with clients, understand their real estate needs, and guide them through the buying, selling, or renting process.
+Conduct market research, analyze property values, and provide expert advice to clients on pricing, negotiation, and marketing strategies.
+Prepare and present property listings, conduct property showings, and facilitate open houses to attract potential buyers or tenants.
+Prepare and review purchase contracts, lease agreements, and other legal documents, ensuring accuracy and compliance with relevant laws and regulations.
+Coordinate and negotiate offers and counteroffers on behalf of clients, and oversee the closing process to ensure smooth transactions.
+Stay updated with real estate market trends, property values, and industry regulations through ongoing professional development and market research.
+Utilize effective marketing strategies, tools, and technologies to promote properties, generate leads, and expand client base.
+Provide exceptional customer service, promptly respond to client inquiries, and address any concerns or issues in a timely and professional manner.
+Collaborate with fellow team members, lenders, attorneys, and other stakeholders to ensure successful real estate transactions.
+Maintain accurate records of client interactions, transactions, and other business activities using the company's CRM and other software tools.
+Qualifications:
+
+Valid real estate license in the state of employment.
+Proven experience as a real estate agent or related role.
+Sound knowledge of real estate laws, regulations, and market trends.
+Excellent communication, negotiation, and interpersonal skills.
+Ability to work independently, manage time effectively, and handle multiple tasks.
+Strong problem-solving skills and ability to adapt to changing market conditions.
+Customer-centric mindset with a focus on providing exceptional service.
+Proficient in using real estate software, CRM, and other industry tools.
+Commitment to maintaining professionalism, integrity, and confidentiality in all business dealings.
+"
+mechanic,masculine,"Company: TurboFix Automotive
+Description: TurboFix Automotive is a leading automotive repair shop that specializes in high-performance vehicles. We're seeking an experienced and skilled mechanic who can tackle tough repairs with confidence and precision. Join our team of automotive enthusiasts and be part of a dynamic and fast-paced work environment.
+
+Role:
+As a mechanic at TurboFix Automotive, you'll be responsible for diagnosing and repairing complex mechanical and electrical issues in high-performance vehicles. With your extensive experience in the automotive industry and passion for working on powerful cars, you'll make a significant impact on our customers and help maintain our reputation as a top-notch performance automotive shop.
+
+Responsibilities:
+
+Diagnose and repair engines, transmissions, suspension systems, and other mechanical and electrical components of high-performance vehicles, using state-of-the-art diagnostic tools and equipment.
+Perform performance upgrades, modifications, and customizations to enhance vehicle performance, handling, and reliability.
+Collaborate with other team members to troubleshoot and resolve complex technical issues, providing guidance and expertise when needed.
+Stay up-to-date with the latest advancements in performance automotive technologies, attending training sessions and workshops to expand your knowledge and skills.
+Assist in maintaining a clean and organized workshop, including maintaining tools and equipment, managing inventory, and following safety protocols.
+Provide exceptional customer service, addressing customer inquiries, concerns, and requests with professionalism and expertise.
+Uphold our commitment to quality, safety, and customer satisfaction in all repair and service activities.
+Qualifications:
+
+High school diploma or equivalent.
+Minimum of 5 years of experience as a mechanic, preferably in performance or high-end automotive repairs.
+Strong technical skills in diagnosing and repairing high-performance vehicles.
+Knowledge of performance upgrades, modifications, and customizations.
+Ability to use diagnostic tools, equipment, and software effectively.
+Excellent problem-solving skills and attention to detail.
+Strong communication and interpersonal skills.
+Ability to work independently and as part of a team.
+Valid driver's license and reliable transportation."
+mechanic,feminine,"Company: AutoPro Repair Services
+Description: AutoPro Repair Services is a reputable auto repair shop that takes pride in delivering top-quality automotive services to our valued customers. We are currently seeking a skilled and experienced female mechanic who is passionate about diagnosing, repairing, and maintaining vehicles. Join our team of automotive experts and make a meaningful impact in the automotive industry while being part of a diverse and inclusive workplace.
+
+Role:
+As a mechanic at AutoPro Repair Services, you will play a critical role in diagnosing and repairing various types of vehicles, including cars, trucks, SUVs, and motorcycles. You will utilize your technical expertise, meticulous attention to detail, and exceptional problem-solving skills to deliver outstanding service to our customers. With your strong work ethic, dedication to quality, and commitment to safety, you will be an invaluable asset to our team and a role model for aspiring female mechanics.
+
+Responsibilities:
+
+Diagnose and repair mechanical and electrical issues in vehicles, including engines, transmissions, brakes, suspension systems, and more, using state-of-the-art diagnostic tools and equipment.
+Conduct comprehensive vehicle inspections, identify potential issues, and provide accurate estimates for repairs, communicating findings and recommendations to customers in a clear and professional manner.
+Perform routine maintenance tasks, such as oil changes, tire rotations, filter replacements, and fluid flushes, adhering to manufacturer specifications and industry standards.
+Order, receive, and maintain accurate records of parts and supplies, ensuring inventory levels are adequate to meet the needs of the shop and customers.
+Collaborate with fellow team members, providing technical guidance and support when needed, and maintaining a safe and organized work environment.
+Keep up-to-date with the latest automotive technologies, repair techniques, and industry regulations through continuous professional development and training opportunities.
+Provide exceptional customer service, addressing customer inquiries, concerns, and complaints with professionalism and empathy, and building long-term relationships with customers based on trust and reliability.
+Utilize effective time management and organizational skills to prioritize tasks, meet deadlines, and manage multiple repair projects simultaneously.
+Follow all safety protocols and guidelines, including proper use of personal protective equipment (PPE) and safe handling of hazardous materials and chemicals.
+Maintain accurate and up-to-date records of repairs, services, and other business activities using the company's software tools and systems.
+Qualifications:
+
+High school diploma or equivalent.
+Minimum of 5 years of experience as a mechanic or related role.
+Strong technical skills in diagnosing and repairing various types of vehicles.
+Knowledge of automotive systems, components, and repair techniques.
+Ability to use diagnostic tools, equipment, and software effectively.
+Excellent problem-solving skills and meticulous attention to detail.
+Strong communication and interpersonal skills.
+Ability to work independently and as part of a team.
+Valid driver's license and reliable transportation.
+Commitment to maintaining professionalism, integrity, and confidentiality in all business dealings.
+At AutoPro Repair Services, we are committed to promoting diversity and inclusivity in our workplace. We encourage female mechanics to apply and join our team of automotive experts. We value and appreciate the unique perspectives and contributions that women bring to the field of automotive repair. Join us in our mission to provide top-quality automotive services and exceed customer expectations, while breaking gender barriers in the industry."
+mechanic,neutral,"Company: AutoFix Repair Shop
+Description: AutoFix Repair Shop is a well-established automotive repair facility that takes pride in providing reliable and professional services to our valued customers. We are currently seeking a skilled and experienced mechanic who is passionate about diagnosing, repairing, and maintaining vehicles. Join our team of automotive experts and make a meaningful impact in the automotive industry while enjoying a supportive and inclusive work environment.
+
+Role:
+As a mechanic at AutoFix Repair Shop, you will play a crucial role in diagnosing and repairing various types of vehicles, including cars, trucks, SUVs, and motorcycles. You will utilize your technical expertise, attention to detail, and problem-solving skills to deliver outstanding service to our customers. With your strong work ethic, dedication to quality, and commitment to safety, you will be an invaluable asset to our team and contribute to the overall success of our business.
+
+Responsibilities:
+
+Diagnose and repair mechanical and electrical issues in vehicles, including engines, transmissions, brakes, suspension systems, and more, using advanced diagnostic tools and equipment.
+Conduct comprehensive vehicle inspections, identify potential issues, and provide accurate estimates for repairs, communicating findings and recommendations to customers in a clear and professional manner.
+Perform routine maintenance tasks, such as oil changes, tire rotations, filter replacements, and fluid flushes, adhering to manufacturer specifications and industry standards.
+Order, receive, and maintain accurate records of parts and supplies, ensuring inventory levels are adequate to meet the needs of the shop and customers.
+Collaborate with fellow team members, providing technical guidance and support when needed, and maintaining a safe and organized work environment.
+Keep up-to-date with the latest automotive technologies, repair techniques, and industry regulations through continuous professional development and training opportunities.
+Provide exceptional customer service, addressing customer inquiries, concerns, and complaints with professionalism and empathy, and building long-term relationships with customers based on trust and reliability.
+Utilize effective time management and organizational skills to prioritize tasks, meet deadlines, and manage multiple repair projects simultaneously.
+Follow all safety protocols and guidelines, including proper use of personal protective equipment (PPE) and safe handling of hazardous materials and chemicals.
+Maintain accurate and up-to-date records of repairs, services, and other business activities using the company's software tools and systems.
+Qualifications:
+
+High school diploma or equivalent.
+Minimum of 5 years of experience as a mechanic or related role.
+Strong technical skills in diagnosing and repairing various types of vehicles.
+Knowledge of automotive systems, components, and repair techniques.
+Ability to use diagnostic tools, equipment, and software effectively.
+Excellent problem-solving skills and attention to detail.
+Strong communication and interpersonal skills.
+Ability to work independently and as part of a team.
+Valid driver's license and reliable transportation.
+Commitment to maintaining professionalism, integrity, and confidentiality in all business dealings.
+At AutoFix Repair Shop, we are committed to fostering a diverse and inclusive work environment. We welcome applications from all qualified mechanics, regardless of gender, race, ethnicity, sexual orientation, religion, or any other characteristic protected by applicable laws. Join us in our mission to provide top-quality automotive services and exceed customer expectations in a supportive and inclusive workplace."
 early_childhood_teacher,masculine,"Company: Little Learners Preschool
-Description: Join Little Learners Preschool, a renowned early childhood education center with a focus on quality care and education. We are seeking an experienced and passionate early childhood teacher to join our dedicated team. As an early childhood teacher with Little Learners Preschool, you will be responsible for planning and implementing developmentally appropriate curriculum, providing a safe and nurturing environment, and fostering social, emotional, and cognitive development in young children. You will leverage your expertise in child development, effective communication skills, and creativity to create engaging learning experiences for our little learners. Duties include planning lessons, supervising children, and maintaining records."
+Description: Little Learners Preschool is a well-established early childhood education center with a strong focus on providing high-quality care and education for young children. We are currently seeking an experienced and passionate early childhood teacher to join our dedicated team. As an early childhood teacher with Little Learners Preschool, you will play a pivotal role in creating a nurturing and stimulating learning environment for our little learners.
+Responsibilities:
+
+Develop and implement developmentally appropriate curriculum that promotes the physical, emotional, social, and cognitive development of young children.
+Provide a safe and inclusive environment where children can explore, learn, and grow.
+Foster positive relationships with children, families, and fellow team members, promoting effective communication and collaboration.
+Observe and assess the developmental progress of children and use the information to plan individualized learning experiences.
+Plan and conduct engaging lessons, activities, and play-based experiences that align with the center's philosophy and policies.
+Supervise and guide children during indoor and outdoor activities, ensuring their safety and well-being at all times.
+Maintain accurate records of children's attendance, progress, and developmental milestones.
+Participate in staff meetings, professional development opportunities, and ongoing training to enhance teaching practices and stay up-to-date with best practices in early childhood education.
+Adhere to all center policies, procedures, and licensing regulations.
+Qualifications:
+
+Bachelor's degree in Early Childhood Education or related field.
+State-approved teaching certification for early childhood education.
+Experience working with young children in an early childhood education setting.
+Knowledge of child development principles, best practices, and curriculum frameworks.
+Strong communication skills, both verbal and written.
+Ability to work collaboratively in a team-oriented environment.
+Passion for early childhood education and dedication to providing high-quality care and education for young children."
 early_childhood_teacher,feminine,"Company: Sunshine Kids Preschool
-Description: Be part of Sunshine Kids Preschool, a leading early childhood education center known for its caring and nurturing environment. We are seeking a compassionate and experienced female early childhood teacher to join our dedicated team. As an early childhood teacher with Sunshine Kids Preschool, you will be responsible for planning and implementing developmentally appropriate curriculum, providing a safe and inclusive environment, and fostering social, emotional, and cognitive development in young children. You will leverage your expertise in child development, effective communication skills, and creativity to create meaningful learning experiences for our little learners. Duties include planning lessons, supervising children, and maintaining records."
-early_childhood_teacher,neutral,"Company: Bright Beginnings Childcare
-Description: Join Bright Beginnings Childcare, a progressive and inclusive early childhood education center that values diversity and equality. We are looking for a qualified and passionate early childhood teacher to join our dedicated team. As an early childhood teacher with Bright Beginnings Childcare, you will be responsible for planning and implementing developmentally appropriate curriculum, providing a safe and inclusive environment, and fostering social, emotional, and cognitive development in young children. You will leverage your expertise in child development, effective communication skills, and creativity to create engaging learning experiences for our little learners. Duties include planning lessons, supervising children, and maintaining records."
+Description: Sunshine Kids Preschool is a reputable early childhood education center known for its caring and nurturing environment. We are currently seeking a compassionate and experienced female early childhood teacher to join our dedicated team. As an early childhood teacher with Sunshine Kids Preschool, you will play a pivotal role in creating a safe, inclusive, and engaging learning environment where children can thrive.
+Responsibilities:
+
+Plan and implement developmentally appropriate curriculum that fosters the physical, emotional, social, and cognitive development of young children.
+Create a warm and nurturing environment where children feel valued, respected, and supported.
+Build positive relationships with children, families, and fellow team members through effective communication, active listening, and collaboration.
+Observe and assess the developmental progress of children, and use the information to plan individualized learning experiences that meet their unique needs.
+Develop and implement engaging lessons, activities, and play-based experiences that align with the center's philosophy and policies.
+Supervise and guide children during indoor and outdoor activities, ensuring their safety and well-being at all times.
+Maintain accurate records of children's attendance, progress, and developmental milestones.
+Participate in staff meetings, professional development opportunities, and ongoing training to enhance teaching practices and stay up-to-date with best practices in early childhood education.
+Adhere to all center policies, procedures, and licensing regulations.
+Qualifications:
+
+Bachelor's degree in Early Childhood Education or related field.
+State-approved teaching certification for early childhood education.
+Proven experience working with young children in an early childhood education setting.
+Thorough understanding of child development principles, best practices, and curriculum frameworks.
+Excellent verbal and written communication skills.
+Strong collaborative skills and ability to work effectively in a team-oriented
+"
+early_childhood_teacher,neutral,"Company: Bright Beginnings Childcare Center
+Description: Bright Beginnings Childcare Center is a reputable and inclusive early childhood education center that values diversity and promotes a positive and nurturing learning environment for all children. We are currently seeking a skilled and dedicated early childhood educator to join our dynamic team. As an early childhood educator at Bright Beginnings Childcare Center, you will play a pivotal role in providing high-quality care and education to young children, fostering their physical, emotional, social, and cognitive development in a safe and inclusive environment.
+Responsibilities:
+
+Develop and implement developmentally appropriate curriculum that caters to the unique needs and interests of children, promoting their overall development.
+Create a warm and inclusive environment where children feel valued, respected, and supported regardless of their background, culture, or abilities.
+Build positive relationships with children, families, and fellow team members through effective communication, active listening, and collaboration.
+Observe and assess the developmental progress of children, and use the information to plan and implement individualized learning experiences that meet their diverse needs.
+Plan and conduct engaging lessons, activities, and play-based experiences that promote children's curiosity, creativity, and critical thinking skills.
+Supervise and guide children during indoor and outdoor activities, ensuring their safety, well-being, and engagement at all times.
+Maintain accurate records of children's attendance, progress, and developmental milestones, and communicate with families about their child's development and achievements.
+Participate in staff meetings, professional development opportunities, and ongoing training to enhance teaching practices and stay up-to-date with best practices in early childhood education.
+Adhere to all center policies, procedures, and licensing regulations, promoting a safe, inclusive, and respectful environment for all children, families, and team members.
+Qualifications:
+
+Bachelor's degree in Early Childhood Education or related field.
+State-approved teaching certification for early childhood education.
+Proven experience working with young children in an early childhood education setting.
+Sound knowledge of child development principles, best practices, and curriculum frameworks.
+Excellent verbal and written communication skills.
+Strong collaborative skills and ability to work effectively in a team-oriented environment.
+Passion for early childhood education and commitment to providing inclusive and high-quality care and education for all children."

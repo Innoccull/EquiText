@@ -1,0 +1,61 @@
+convert:
+  cmd: python -m spacy run convert
+  script:
+    - python scripts/convert.py en assets/train.json corpus/train.spacy
+    - python scripts/convert.py en assets/dev.json corpus/dev.spacy
+  deps:
+    - path: assets/train.json
+      md5: 48f04ce71a2d222dbf8e7664e6d4bc2f
+    - path: assets/dev.json
+      md5: 54fe155c4007101fff7dccc0f6608611
+    - path: scripts/convert.py
+      md5: c7cd3994f4314f5f66757a21ff4b1d65
+  outs:
+    - path: corpus/train.spacy
+      md5: 8c2e230f84a588c7e67295da813fecc0
+    - path: corpus/dev.spacy
+      md5: 9f2fc5213effe3b3a4327da64ff09b0a
+  spacy_version: 3.3.1
+  spacy_git_version: 5fb597f77
+create-config:
+  cmd: python -m spacy run create-config
+  script:
+    - python -m spacy init config --lang en --pipeline ner configs/config.cfg --force
+  deps: []
+  outs:
+    - path: configs/config.cfg
+      md5: 8126a761c6f946e793c4c410d5c9e943
+  spacy_version: 3.3.1
+  spacy_git_version: 5fb597f77
+train:
+  cmd: python -m spacy run train
+  script:
+    - python -m spacy train configs/config.cfg --output training/ --paths.train corpus/train.spacy
+      --paths.dev corpus/dev.spacy --training.eval_frequency 10 --training.patience
+      50 --gpu-id -1
+  deps:
+    - path: configs/config.cfg
+      md5: 40f00722441bba391089dcd874b85359
+    - path: corpus/train.spacy
+      md5: 8c2e230f84a588c7e67295da813fecc0
+    - path: corpus/dev.spacy
+      md5: 9f2fc5213effe3b3a4327da64ff09b0a
+  outs:
+    - path: training/model-best
+      md5: b80f096ea491d3ff16c46c494a8af577
+  spacy_version: 3.3.1
+  spacy_git_version: 5fb597f77
+evaluate:
+  cmd: python -m spacy run evaluate
+  script:
+    - python -m spacy evaluate training/model-best corpus/dev.spacy --output training/metrics.json
+  deps:
+    - path: corpus/dev.spacy
+      md5: 9f2fc5213effe3b3a4327da64ff09b0a
+    - path: training/model-best
+      md5: b80f096ea491d3ff16c46c494a8af577
+  outs:
+    - path: training/metrics.json
+      md5: 52e5bebf2588da236ab5a386ec58ede0
+  spacy_version: 3.3.1
+  spacy_git_version: 5fb597f77
