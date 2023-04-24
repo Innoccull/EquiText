@@ -2,44 +2,38 @@
 
 
 # Introduction
-Ethics is critically important for data scientists because the data science solutions they develop can have wide-ranging implications for society, individuals, and businesses. Ethics provides a framework for data scientists to ensure that their work is conducted in a responsible, transparent, and socially acceptable manner.
+Ethics is critically important for data scientists because the data science solutions they develop can have wide-ranging implications for society, individuals, and businesses. Ethics provides a framework for data scientists to ensure that the work they do and the solutions they produce are responsible, transparent, and socially acceptable.
 
+The goal of this assignment is to design a solution that addresses an ethical concern with an existing data science product. In doing so, we demonstrate how data science solutions can be developed to better align with desired ethical outcomes. 
 
-The goal of this project is to design a solution that addresses an ethical concern with an existing data science product. In doing so, we demonstrate how data science solutions can be developed to better align with desired ethical outcomes. 
-
-This project is executed in three parts:
-1. **Identify the ethical concern:** we identify the ethical concern this project seeks to address and the proposed data science response
+This assignment is structured in three parts:
+1. **Identify the ethical concern:** we identify the ethical concern this assignment seeks to address and propose a response to address this ethical concern
 2. **Develop a data science response:** we develop a data science model that supports addressing the ethical concern 
 3. **Ethical response assessment:** we evaluate how well the data science response addresses the ethical concern, propose an overall response that attempts to fully address the ethical concern and discuss possible avenues for future development of an overall response
 
 
 # Ethical concern
-First we identify the ethical concern and proposed data science response that will be developed as part of this assignment.
+First we identify the ethical concern and proposed data science response that will be developed to support addressing the concern.
 
 ## Discriminatory language in job advertisements
-There is research which has found that gendered language in job advertisements affects who applies [Gautier 2011](https://ideas.wharton.upenn.edu/wp-content/uploads/2018/07/Gaucher-Friesen-Kay-2011.pdf). This research showed that gendered language in job advertisements causes prospective applicants to have a decreased sense of belongingness in relation to the job advertised. This decreased sense of belongingness in turn decreases the appeal of the job to potential applicants, making them less likely to apply.
-
-There are several key leesons from this research:
-- Masculine gendered language can create a decreased sense of belongingness for females. 
-- A decreased sense of belongingness is associated with a decreased appeal of the job advertisements and therefore a lower likelihood to apply.
-- Men are not impacted by the use of feminine language in advertisements. They do not experience a decreased sense of belongingness and are not discouraged from applying.
+Research has found that gendered language in job advertisements can affect who applies [Gautier 2011](https://ideas.wharton.upenn.edu/wp-content/uploads/2018/07/Gaucher-Friesen-Kay-2011.pdf). This research showed that gendered language in job advertisements causes prospective applicants to have a decreased sense of belongingness in relation to the job advertised. This decreased sense of belongingness in turn decreases the appeal of the job to potential applicants, making them less likely to apply. In particular, this research found that masculine gendered language can create a decreased sense of belongingness for females while males do not appear to be impacted by feminine language.
 
 This impacts on both individuals and employers. For individuals, it limits the perceived opportunities available for members of groups that will feel a lesser sense of belongingness in response to the language used. In effect this limits their future earning and career prospects.
 
 For employers, producing job applications that can exclude some applicants can lead to a less diverse and talented pool of applicants to choose from in the selection process. It can also create regulatory risk where there are relevant anti-discrimination regulations and/or laws in place. Finally, it can also lead to overall negative brand perception if an organisation is perceived as biased towards/against specific genders through its use of language.
 
 ## Response
-To address this concern, we would want a response that enables the production of job advertisements that do not include gendered language which reduces an applicant's sense of belongingness in relation to an advertised position.
+To address this concern, we would want a response that enables the production of job advertisements that do not include gendered language that reduces an applicant's sense of belongingness in relation to an advertised position.
 
-This project develops a named entity recognition (NER) model to detect gendered language in job ads and assign a 'gender target' score indicating masculine, feminine, or neutral tones for the advertisement. The development of this model is covered in the Data Science Response section below. However, the data science solution alone is not enough to create the change in real-world action required to address the ethical concern. The project therefore also considers further interventions that can be made to create a complete system that addresses the ethical concern.
+This assignment develops a named entity recognition (NER) model to detect gendered language in job advertisements and assign a 'gender target' score indicating whether the tone of the advertisement is more masculine, feminine, or neutral. However, this model alone is not enough to create the change in real-world action required to address the ethical concern. This assignement therefore will also therefore consider further interventions beyond that can be made alongside the model to create a complete system that addresses the ethical concern identified.
 
 
 # Data Science Response
 
-In this section we outline how a data science model was developed to address the ethical concern identified.
+In this section we outline how a named entity recognition model was developed to identify gendered language in job advertisements.
 
 ## Gendered language
-The research referenced above used a list of common masculine and feminine terms in their study. These lists were re-used for training the named entity recognition model.
+The research on gendered language in job advertisements referenced defined a list of masculine and feminine terms in their study. These lists were re-used for training the NER model.
 
 The list of masculine terms used can be found [here](https://github.com/Innoccull/DATA417/blob/main/data/masculine.csv).
 
@@ -48,26 +42,26 @@ The list of feminine terms used can be found [here](https://github.com/Innoccull
 ## Dataset
 To train an NER model, a dataset of job descriptions is required. For this project we chose to use the Indeed Job Posting dataset. 
 
-This dataset was created by [PromptCloud](www.promptcloud.com) and [DataStock](datastock.shop). It contains around 30,000 records of job pastings made to indeed.com from Aug - Oct 2019. 
+This dataset was created by [PromptCloud](www.promptcloud.com) and [DataStock](datastock.shop). It contains around 30,000 records of job postings made to the U.S based website indeed.com from Aug - Oct 2019. 
 
 The dataset was downloaded from [Kaggle](https://www.kaggle.com/datasets/promptcloud/indeed-job-posting-dataset).
 
-## Creating training data
-To create the training data for the NER model, we took a random selection of 1000 jobs from the Indeed Jobs dataset. This amount was chosen due to processing power constraints.
+## Creating model training data
+To create the training data for the NER model, we took a random selection of 1000 job advertisements from the Indeed Job Posting dataset. This amount was chosen due to processing power constraints.
 
 The job descriptions for the advertisements chosen were pre-processed to clean the data. This included removing HTML tags, pushing all text to lower case and removing URLs.
 
-The resulting clean job description data were labelled in a gazetteer style approach. A python script was created to identify masculine and feminine words in the job descriptions based on the masculine and feminine terms lists linked above. 
+The resulting clean job description data were labelled for masculine and feminine terms in a gazetteer style approach. A python script was created to identify masculine and feminine words in the job descriptions based on the masculine and feminine terms lists linked above. 
 
-The auto-labelled job descriptions were loaded to [doccano](https://github.com/doccano/doccano), an open-source training data labelling tool. In doccano, there was a manual inspection of several job descriptions to check for accuracy of labelling. No inaccuracies were identified so the auto-annotations were accepted for training.
+The auto-labelled job descriptions were loaded to [doccano](https://github.com/doccano/doccano), an open-source data labelling tool. In doccano, there was a manual inspection of several job descriptions to check for accuracy of labelling. No inaccuracies were identified so the auto-annotations were accepted for training.
 
 Of the 1000 jobs randmly selected, 700 of these were used for training while 300 of these were used for test.
 
 
 ## Model training and performance
-A custom named entity recognition model was trained using [spaCy](https://spacy.io/). spaCy is an open source NLP library that supports many NLP functions, including the ability to train custom named entity recognition. 
+A custom NER model was trained using [spaCy](https://spacy.io/).
 
-The named entity recognition model was trained to recognise masculine and feminine terms. A summary of the model performance is provided below.
+The model was trained to recognise masculine and feminine terms as labelled in the training data. A summary of the model performance is provided below.
 
 |           | Masculine | Feminine | Overall |
 |-----------|-----------|----------|---------|
@@ -75,17 +69,18 @@ The named entity recognition model was trained to recognise masculine and femini
 | Recall    | 0.98      | 0.99     | 0.98    |
 | F-Score   | 0.99      | 0.99     | 0.99    |
 
-We can see that the model performs extremely well at identifying the gendered language in the job advertisements based on the training and test data provided.
+We can see that the model performs extremely well at identifying the gendered language in job advertisements based on the training and test data provided.
 
 ## Scoring advertisements
-Finally, several 'gender scoring' statistics were calculated for each job advertisement based on the gendered terms identified. These statistics included:
+Several gender scoring statistics were calculated for each job advertisement based on the gendered terms identified. These include:
 - the total masculine terms identified in the advertisement
 - the total feminine terms identified in the advertisement
 - the percentage of words in the job description that are masculine
 - the percentage of words in the job description that are feminine
 - a gender target score
 
-These statistics enable more precise assessment of which advertisements require intervention. Based on the research, advertisements with a higher percentage of masculine terms or with gender target scores that indicate a more masculine advertisement would be in greater need of intervention.
+These statistics enable more complete assessment of the gender tone of each advertisement. Advertisements with a higher percentage of masculine terms or with gender target scores that indicate a more masculine advertisement would be in greater need of intervention to address the ethical concern.
+
 
 
 # Ethical Assessment
