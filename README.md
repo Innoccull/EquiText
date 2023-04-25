@@ -16,7 +16,7 @@ This assignment is structured in three parts:
 First we identify the ethical concern and proposed data science response that will be developed to support addressing the concern.
 
 ## Discriminatory language in job advertisements
-Research has found that gendered language in job advertisements can affect who applies [Gautier 2011](https://ideas.wharton.upenn.edu/wp-content/uploads/2018/07/Gaucher-Friesen-Kay-2011.pdf). This research showed that gendered language in job advertisements causes prospective applicants to have a decreased sense of belongingness in relation to the job advertised. This decreased sense of belongingness in turn decreases the appeal of the job to potential applicants, making them less likely to apply. In particular, this research found that masculine gendered language can create a decreased sense of belongingness for females while males do not appear to be impacted by feminine language.
+Research has found that gendered language in job advertisements can affect who applies [Gaucher et. al. 2011](https://ideas.wharton.upenn.edu/wp-content/uploads/2018/07/Gaucher-Friesen-Kay-2011.pdf). This research showed that gendered language in job advertisements causes prospective applicants to have a decreased sense of belongingness in relation to the job advertised. This decreased sense of belongingness in turn decreases the appeal of the job to potential applicants, making them less likely to apply. In particular, this research found that masculine gendered language can create a decreased sense of belongingness for females while males do not appear to be impacted by feminine language.
 
 This impacts on both individuals and employers. For individuals, it limits the perceived opportunities available for members of groups that will feel a lesser sense of belongingness in response to the language used. In effect this limits their future earning and career prospects.
 
@@ -79,109 +79,63 @@ Several gender scoring statistics were calculated for each job advertisement bas
 - the percentage of words in the job description that are feminine
 - a gender target score
 
+The gender target score is a generalized metric used in two researched studies ([Bohm et. al. 2020](https://kersting-internet.de/pdf/Boehm_Lynnik_Kohl_Weber_Teetz_Bandurka_Kesting_in_Druck_ACM_SIGMIS_GenderBias.pdf) and [Tang et. al. 2017](https://people.cs.uchicago.edu/~ravenben/publications/pdf/gender-cscw18.pdf)). It measures gender bias using a 'push-pull' score, where masculine terms are push words (discouraging) and feminine words are pull words (attracting) for applicants. The score is calculated by neutralizing feminine and masculine words, applying a sigmoid function, and producing a range of 0 to 1. A score of 0.5 indicates a neutral description, while higher scores reflect more femininity and lower scores reflect more masculinity in the advertisement.
+
 These statistics enable more complete assessment of the gender tone of each advertisement. Advertisements with a higher percentage of masculine terms or with gender target scores that indicate a more masculine advertisement would be in greater need of intervention to address the ethical concern.
 
 
 
 # Ethical Assessment
 In this final section we perform an assessment of how we can address the original ethical concern. This is done in three parts:
-1. Evaluate the performance of the data science model developed for addressing the ethical concern
+1. Evaluate the performance of the NER model developed for addressing the ethical concern
 2. Define an overall system for response to the ethical concern identified
 3. Identify limitations of the overall system defined and potential future improvements
 
 
 ## Evalute solution performance
-The original ethical concern is that individuals are discouraged from applying for jobsdue to gendered language used in the advertisement. Specifically this is the case with females being dissuaded by masculine language in job advertisements. The data science solution developed addresses this by enabling identification of this gendered language through an NER model so that it could be corrected prior to advertising the job. 
+The original ethical concern is that individuals are discouraged from applying for jobs due to gendered language used in advertisements. Specifically this is the case with females being dissuaded by masculine language. The NER model developed addresses this by enabling identification of this gendered language so that it could be corrected prior to advertising the job. 
 
-To properly assess whether this intervention addresses the original ethical concern, it would be best to test whether advertisements modified based on the gendered language identified by the model led to a higher likelihood for the target audience to apply. This is the approach taken in several other pieces of research.
+To properly assess whether this intervention addresses the original ethical concern, it would be best to test whether advertisements modified based on the gendered language identified by the model led to a higher likelihood for the target audience to apply.
 
 A design to do this evaluation would be to:
-1. Select a sample of job advertisements
-2. Apply the NER model to identify gendered terms and score accordingly
-3. Select the most masculine job advertisements
-4. Create separate masculine, feminine and neutral versions of these job advertisements
-5. Present these to individuals and survey their sense of belongingness and willingness to apply to these advertisements
+1. Select a random sample of job advertisements.
+2. Apply the NER model to identify gendered terms and score the advertisements.
+3. For each advertisement, create separate masculine, feminine and neutral versions accordingly. For example, it an advertisement was scored by the model as masculine we would create separate feminine and neutral versions of it.
+5. Present the masculine, feminine and neutral version of each advertisement to individuals and survey their sense of belongingness and willingness to apply to these advertisements. 
 
-From this assessment, we would test whether individuals are more likely to apply for the neutral and feminine versions of the job descriptions as opposed to the masculine version. Unfortunately step 5 is beyond the scope of this assignment as it would require sourcing participants to evaluate the advertisements. A separate approach for evaluating the solution is therefore taken in this assignment.
+From this assessment, we would test whether females are more likely to apply for the neutral and feminine versions of the job descriptions as opposed to the masculine version. Unfortunately undertaking this assessment is beyond the scope of this assignment as it would require a large amount of effort  sourcing participants to evaluate the advertisements. A separate approach for evaluating the solution is therefore taken in this assignment.
 
 <br/>
 
-As an alternative approach, we can instead measure how effective the NER model is at identifying gendered language. On this approach we do not understand if we have made the advertisements less likely to discourage applicants, but we do understand the extent to which it would be possible to produce improved advertisements based on modifying the language identified. If the NER model identifies, for example, too many masculine terms or the wrong masculine terms - the alternative advertisements produced based on it may not be effective.
+As an alternative approach, we can instead evaluate how effective the NER model is at identifying gendered language. On this approach we do not understand if we have made the advertisements less likely to discourage applicants, but we do understand the extent to which it would be possible to produce improved advertisements based on modifying the language identified. If the NER model identifies, for example, too many masculine terms or the wrong masculine terms - the alternative advertisements produced based on it may not be effective. Hence understanding this aspect of the model's performance is useful.
 
 There are three ways in which we will do this evaluation of the effectiveness of the solution for identifying gendered language:
 1. Benchmark against previous studies
 2. Manually inspect predictions
-3. Apply the model to job descriptions produced by generative AI
+3. Apply the model to masculine, feminine and neutral job descriptions produced by generative AI
 
 
 #### Benchmark against previous studies
-First we can benchmark overall peformance against what previous studies have found in terms for the prevalence of gendered language. In this benchmarking we can see if we are identifying masculine and feminine language at similar levels, if we are then we can infer that the model developed here is identifying gendered language at rates generally accepted.
+Benchmarking against previous studies can help assess the model's performance in identifying masculine and feminine language. If the model's identification rates are similar to rates identified in previous studies, it indicates its effectiveness in detecting gendered language.
 
-We will benchmark our model against previous studies according to the metrics already defined for each advertisement in the 'Scoring advertisements above' section. Below are the results of applying the NER model to a random selection of 1000 job advertisements from the Indeed Jobs dataset:
-- NNNN (97%) were found to have masculine words
+We will benchmark according to the metrics already defined for each advertisement in the [Scoring advertisements](#Scoring advertisements) section above. Below are the results of applying the NER model to a random selection of 1000 job advertisements from the Indeed Jobs dataset:
+- 997 (97%) were found to have masculine words
 - NNNN (100%) were found to have feminine words
 - NNNN (X%) were found to have more masculine words than feminine words
-- The average proportion of words in an advertisement that are masculine is 1.3%
-- The average proportion of words in an advertisement that are feminine is 1.2%
-- The average gender target score is 0.38.
+- The average proportion of words in an advertisement that are masculine is 2.0%
+- The average proportion of words in an advertisement that are feminine is 1.5%
+- The average gender target score is 0.46.
 
-The study completed by Gaucher et. al. 2011 examined the prevalence of gendered language in job advertisements and its impact on prospective applicants. Their study found that the average proportion of words in a job advertisement that are masculine is approximately 1.0%. For feminine words this is 0.6%. In comparison to this, the model developed for this assignment predicts somewhat in line with the expected average percentage for masculine words (1.0%). However, the model performs differently for feminine words where it predicts at twice the rate (1.2%), suggesting it is potentially over identifying feminine language in job advertisements.
+The study completed by [Gaucher et. al. 2011](https://ideas.wharton.upenn.edu/wp-content/uploads/2018/07/Gaucher-Friesen-Kay-2011.pdf) examined the prevalence of gendered language in job advertisements and its impact on prospective applicants. Their study found that the average proportion of words in a job advertisement that are masculine is approximately 1.0%. For feminine words this is 0.6%. In comparison to this, the model developed for this assignment predicts at approximately double the rate for both masculine and feminine words, suggesting that it is over-identifying the prevalence of gendered language for both masculine and feminine terms.
 
-The gender target score is a generalized metric used in two researched studies (Bohm et. al. and Tang et. al.). It measures gender bias using a 'push-pull' score, where masculine terms are push words (discouraging) and feminine words are pull words (attracting) for applicants. The score is calculated by neutralizing feminine and masculine words, applying a sigmoid function, and producing a range of 0 to 1. A score of 0.5 indicates a neutral description, while higher scores reflect more femininity and lower scores reflect more masculinity in the advertisement.
-
-For the referenced studies, there was an average score of 0.38 (Bohm) and an average of 0.48 (Tang). Both these scores show a more masculine lean for the language used in job advertisements. The algorithm produced for this assignment produced an average score of 0.506 which suggests an overall average neutral tone for job advertisements. This logically follows from the previous assessment where feminine words appear to being more commonly identified which could be pulling the model average to be more neutral overall.
-
-In addition, the study by Bohm et. al also examined the most common masculine and feminine key words in advertisement, which provides a final benchmark to assess against. The table below is reported in the study referenced and shows the most common masculine and feminine words and the proportion of identified words they make up out of all words identified.
-
-| Masculine   | Prop | Feminine      | Prop |
-|-------------|------|---------------|------|
-| Ability     | 35%  | Involvement   | 32%  |
-| Analysis    | 15%  | Creativity    | 24%  |
-| Flexibility | 9%   | Communication | 12%  |
-
-In comparison the mode for this assignment produced the result below in terms of most common terms.
-
-| Masculine   | Prop | Feminine      | Prop |
-|-------------|------|---------------|------|
-| Ability     | 34%  | Work          | 28%  |
-| Data        | 8%   | Service       | 19%  |
-| Able        | 6%   | Support       | 9%  |
-
-We see that there is overlap in the use of the term 'ability' however remaining words do not appear to overlap.
-
- 
-### Manually inspect predictions
-
-A manual inspection of several job advertisements will give us a better sense of the performance of the NER model. To do this, we inspect the top ?masculine and feminine advertisements in terms of the gender target score and draw conclusions on model performance based on observations of these.
-
-<br/>
-
-![](assets/displacy_images/masc_1.svg)
-**Masculine**
-There are several observations we can make about the job advertisements.
-
-There appears to be what could be considered many false positives in terms of gendered language. For example, the most masculine advertisements identifies the term 'Logic' repeatedly as a masculine term. While this is gendered language, in context it is in the name of the organisation. The presence of this language may affect the sense of belongingness in the organisation (since the name represents what the organisation is about), this assumption should be tested. 
-
-It appears there could be confusion when there is a difference in descriving the attributes of the person versus nouns. For example, the second example shows the use of the word 'lead' is used in two senses. First it describes attributes of the applicant as needing to lead. However it is also used to describe 'lead generation'. It seems like the former will be more relevant for a sense of belongingness as opposed to the latter.
-
-There are extremely common terms that appear necessary and almost unavoidable in job advertisements. For example, 'ability'. 
-
-Other common terms while unavoidable, could be discouraging. For example, use of the term data may make the position appear more technical. However, this perhaps should be presented as it is a requirement for ability to do the job and may not discourage females who do have a more technical bent. Could more technical skills that relate to aptitude should not change (though personal attributes/styles could be open).
-
-
-**Feminine**
-The top feminine jobs interestingly show a complete absence of masculine words which maximises the gender target to be completely feminine. 
-
-
-Overall, there would need to be refinement. This primarily relates to understanding when terms are used to describe the applicant or their duties versus the name of something. 
-
+With regard to gender target score in previous studies, there was an average of 0.38 (Bohm) and 0.48 (Tang) found in the advertisements examined. Both these scores show a more masculine lean for the language used in job advertisements. The NER model produced for this assignment produced an average score of 0.47 which suggests an overall average neutral tone for job advertisements with a slightly masculine leaning. On this particular metric, the NER model's performance is in line with what previous studies found.
 
 ### Generative AI examples
-Finally, to test model performance we use generative AI (Chat-GPT) to create masculine, feminine and neutral versions of job advertisements for three different professions (real estate, mechanic and early childhood teacher). These professions were chosen specifically as they represent largely gender neutral (real estate agent), masculine  (mechanic) and feminine (early childhood teacher) professions. We will use the gender score defined above to determine if the model is correctly scoring advertisements in line with what we expect.
+To test model performance we can use generative AI (Chat-GPT in this instance) to create masculine, feminine and neutral versions of job advertisements for three different professions (real estate, mechanic and early childhood teacher). These professions were chosen specifically as they represent largely gender neutral (real estate agent), masculine  (mechanic) and feminine (early childhood teacher) professions. We will use the gender score defined above to determine if the model is correctly scoring advertisements in line with what we expect.
 
 The table below presents the results.
 
-| Job Type                | Language Type | Gender target Score |
+| Job Type                | Language Type | Gender Target Score |
 |-------------------------|---------------|---------------------|
 | Real estate agent       | masculine     | 0.44                |
 | Real estate agent       | feminine      | 0.50                |
@@ -193,28 +147,60 @@ The table below presents the results.
 | Early childhood teacher | feminine      | 0.56                |
 | Early childhood teacher | neutral       | 0.55                |
 
+Within each profession the results are as expected as the masculine language gender target score is lower (i.e. more masculine) than the feminine language gender target score. However, there are a few results that are unanticipated:
+- The neutral score for real estate agent is more masculine than masculine 
+- The neutral score for early childhood teacher is just as masculine as masculine
+- The neutral score for mechanic is more feminine than the feminine score
 
+ 
+### Manually inspect predictions
+
+A manual inspection of several job advertisements will allow a qualitative assessment of the performance of the NER model. To do this, we inspect four job advertisements, this includes that adertisement:
+- With the highest masculine and feminine percentage of words (ordered by masculine percentage then feminine percentage)
+- With the highest feminine and masculine percentage of words (ordered by feminine percentage then masculine percentage)
+
+
+The visualisations of these advertisements and the gendered terms identified in them can be found (somewhere). There are a few observations we can make about the job advertisements .
+
+There appears to be what could be considered many false positives in terms of gendered language. For example, the most feminine advertisement identifies the term 'service' repeatedly as a feminine term. While this is gendered language, in context it is in the name of the department the individual would be working in. While the presence of this language may still affect the sense of belongingness in the organisation, this assumption should be tested since the term refers to the department and not specifically attributes of the potential applicants or skills required for the role. Another example of this is where the word 'lead' is used in two senses. First it describes attributes of the applicant as needing to lead. However it is also used to describe 'lead generation'. It seems like the former will be more relevant for a sense of belongingness as opposed to the latter.
+
+A second observation is that sometimes the gendered terms are used in a positive light.
+
+From these observations, it is clear that there could be further attention paid to the context in which the gendered terms are being used in an advertisement. The model could be refined so that when a term is used in positive light or is used as a noun to describe a concept or inanimate 'thing', it is not predicted as gendered language that could affect the sense of belonginginess.
 
 ### Conclusion on model performance
 
-Overall, this benchmarking assessment shows that for masculine terms the NER model developed performs in line with expectations set in previous studies. It identifies these terms at a similar rate to previous studies and there is overlap in the most commonly identified term and the proportion it makes up of all identified terms. However, this assessment also indicates that the model is potentially over-identifying feminine terms. We can see that the rate at which feminine terms is being identified is higher and the gender target score leans more feminine. In practice, this may mean that the model might falsely show that an advertisement is not going to discourage applicants when it might do so, due to the fact that it may be identifying terms as feminine leaning when it shouldn't. A manual inspection of the most masculine and feminine advertisements may shed some light on this.
+Overall the model performs well in identifying gendered language. The rates and scores at which it identifies gendered language is within what is generally observed, in addition to this the model predicted largely in line with what would be expected for the advertisements created through generative AI. However it is evident that some fine-tuning of the model predictions will be required. 
+
+The need to fine tune is evident in the fact that some of the rates of identifying masculine and geminine language is higher and the fact that the neutral advertisements are identifying more masculine and feminine terms. Based on this result and the observations made in the manual inspection, it is clear that the identification of gendered language needs to be more discriminatory. The model should be enhanced to be more sensitive to the context in which masculine and feminine terms are used so that they are not labeled as gendered when they are used in a positive sense or when they are describing the name of something.
+
 
 ## Overall Ethical Response
-While the model developed assists with identifying gendered language, it alone isn't enough as a system to address the original ethical concern. Defining an overall response requires that we identify what further would need to be put in place around the model to fully address the ethical concern identified. This acknowledges that data science solutions alone are often not enough to create the change in the world we want to see, but rather are supporting tools that need to be complemented with other interventions that form a whole system of intervention.
+While the model developed assists with identifying gendered language, it alone isn't enough as a system to address the original ethical concern. Defining an overall response requires that we identify what further would need to be put in place around the model to fully address the ethical concern identified. This acknowledges that data science solutions are more than just the model. Models alone are often not enough to create the change in the world we want to see. Instead they are supporting tools that need to be understood as one part of an overall system and must therefore be complemented with other interventions.
 
-In this design, we ensure to take account of and follow the responsible AI design principles of transparency, fairness, accountability and privacy.
+In this section, we put forward an overall system design for addressing discriminatory language in job advertisements. In this design we design not only to efficiently address the ethical concern but also ensure to take into the responsible AI design principles transparency, fairness, accountability and privacy.
 
 <br/>
 
 Bias and discrimination in the recruitment process manifests in different ways. Typically the process involves: 
-- an advertising phase where an employer will prepare an advertisement for a role, advertise it in their chosen medium and applicants will apply
-- a selection phase where an employer will review applicants, interview a select amount and then make a final selection of who to employ
+- an **advertising phase** where an employer will prepare an advertisement for a role, advertise it in their chosen medium and applicants will apply
+- a **selection phase** where an employer will review applicantions, interview a select amount and then make a final decision of who to employ
 
 ### Advertising phase
-The model developed here targets the advertising phase by identifying language that can discourage applicants. However, identifying the language in itself is not enough in this page. The model also should recommend alternative wording to enable those crafting job advertisements to be able to create improved wording. To create the achange in action, it is not enough to tell people what is wrong we should also make it as easy as possible to take corrective action by providing these suggestions. In addition to this, it would be ideal if the solution provided some rationale or explanation as to the effect of the specific language identified. Providing a rationale may make it more likely for individuals to take action if they understand the 'why' behind the suggested change. This will also assist with educating users so that they would be better equipped to identify this language themselves in the future, putting them in a position to prevent its entry into job advertisements in the future. Finally, we would want to integrate use of the model into the tools that individuals use to craft job advertisements. This could in practice, for example, involve integrating its use into a product like Microsoft Word so that users can receive instant feedback. This would remove another barrier of having to potentially run advertisements through a separate tool, which would create an extra step in the process for users and could discourage them from checking.
+The model developed here targets the advertising phase by identifying language that can discourage applicants. However, identifying the language in itself is not enough. The model should also recommend alternative wording to enable those crafting job advertisements to be able to create improved wording. To create the desired change in action it is not enough to tell people what is wrong, we should also make it as easy as possible to take corrective action by providing these suggestions. 
 
-Outside of enhancing the model to make it more likely gendered language will be corrected, consideration during this phase should be given to where the job advertisements are posted. While the data science solution will improve the wording of the advertisement, it will need to be read by those who are targeted. Consideration should therefore be given to advertising in a location and for a duration that is likely to reach a wide pool of diverse candidates.
+In addition to this, it would be ideal if the solution provided some rationale or explanation as to the effect of the specific language identified. Providing a rationale may make it more likely for individuals to take action if they understand the 'why' behind the suggested change. This will also assist with educating users so that they would be better equipped to identify this language themselves in the future, putting them in a position to prevent its entry into job advertisements in the future. 
 
+Finally, we would want to integrate use of the model into existing tools that individuals use to craft job advertisements. This could in practice, for example, involve integrating its use into a product like Microsoft Word so that users can receive instant feedback. Alternatively it could involve exposing the model via an API (Application Programming Interface) so existing products could choose to leverage its capabilities. This would remove another barrier to addressing the ethical concern. Requiring users to run advertisements through a separate tool would create an extra step in their process and could discourage them from checking.
+
+Outside of enhancing the model to make it more likely gendered language, consideration during the advertising phase should be given to where the job advertisements are posted. While the data science solution will improve the wording of the advertisement, it will need to be read by those who are targeted. Consideration should therefore be given to advertising in media and for durations that are likely to reach a wide pool of diverse candidates.
+
+**Protecting against cheating the systems**
+How can we prevent people trying to cheat the model by providing a sanitised job description but not caring about the remainder of the process?
+
+Well we are still addressing the original concern, even if the attempt is not genuine it is only the text in the job advertisement that we care about.
+
+The model could also be enhanced to include more positive/encouraging language.
 
 
 ### Selection phase
@@ -223,15 +209,33 @@ There are a number of other measures that can be taken to create a holistic solu
 - increasing the use of more objective interview techniques (e.g. competence based interviews) so that assessments of suitability are made as objectively as possible on competence as opposed to identity
 - undertake unconscious bias training for those who are involved in the hiring process so that these biases around the identity of applicants have a lower likelihood of being part of the decision making
 
-</br>
 
-### Unanticipated consequences
-The application of a model in practice can look different. Responsible AI design requires that we should try to anticipate the consequences/impacts of applying the model in practice and try to miigate any undesirable impacts in our design. 
 
-How do we make sure that the application of the model is ethical? There are standard problems that emerge when implementing data science solutions that undermine their performance, we should consider how to address these.
-- Making sure people don't blindly follow the model
-- Measuring whether the model is actually increasing the pool of diverse applicants
-- How can we prevent people trying to cheat the model by providing a sanitised job description but not caring about the remainder of the process?
+### Responsible AI
+Responsible AI design requires that we should design models that are transparent, fair, accountable, and respect prviacy/security. Here we incldue some additional design features to ensure that the proposed system aligns with these responsible AI principles. 
+
+**A human in the loop**
+It is often advisable that there is a 'human in the loop' of the use an AI for several reasons. It ensures firstly that there is a check on the AI's decisions, there can be a human sanity check on what the model is producing. In addition to this it provides an element of accountabilityin the design whereby a human is ultimately making the decision on language used in the advertisement.
+
+Within our system, we can include that a human would review and correct gendered language in advertisements based on the information presented to them. We would also ideally be able to present to the human reviewer the gendered language, why that language was identified and a suggested replacement.
+
+**Explaining model predictions**
+To promote transparency, we will want to be able to clearly explain model predictions. In the context of this assignment, this will involve clearly explaining why language has been identified as gendered and how that gendered language would impact on individuals. 
+
+This can be achieved in two ways. Firstly a library such as SHAP or LIME could be used to generate explanations for predictions. These libraries will provide an overview of the important features and their relative weighting for predictions made. In the context of NER, this will show which of the surrounding words influenced the prediction.
+
+In addition to this, it may be possible to produce a knowledge base that allows for explanation of the way in which a gendered term can impact on job advertisements. For example, some words might impact through reinforcing underlying gender stereotypes for professions
+
+**Model monitoring**
+Finally we will want to include monitoring of the model to help promote transparency and continued improvement of the model's prediction through feedback. Monitoring of the model could include:
+- Measure the amount of times that a user takes the advice of the model and rejects the advice of the model so that we can understand whether the advice presented is useful to users
+- Measure the gender target score before and after user updates based on model advice so that we can see that the model is producing improved advertisements
+- Measure the profile of applicants according to the gender target score so that we can understand if more feminine gender target scores 
+
+### Overall solution design
+The image below provides an overall view of the solution design, taking into account the design considerations above.
+
+![](/assets/overall_solution.jpg)
 
 
 ## Limitations
