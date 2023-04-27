@@ -264,13 +264,18 @@ To manage this, there will need to be at the very least a human in the loop to m
 
 
 ## Conclusion
-Gendered language in job advertisements can impact on both individuals and employers in a negative way. This assignment has created an NER model to identify gendered terms and proposed a design for an overall system that utilises this model to address the original ethical concern. This overall system proposes improvements to the model, non-technology interventions in the recruitment process to mitigate bias and also responsible AI design features. Some of the key features of this overall solution are: 
+Gendered language in job advertisements can impact on both individuals and employers in a negative way. This assignment has created an NER model to identify gendered terms and proposed a design for an overall system that utilises this model to address the original ethical concern. This overall system proposes improvements to the model and non-technology interventions in the recruitment process to mitigate bias. The design also incorporates responsible AI design features. Some of the key features of this overall solution are: 
 - Enhancing model predictions to be more sensitive to the context in which masculine and feminine terms are used
-- Enhancing the model to providie recommendations for alternative wording
-- Incorporating the model recommendations into existing workflows so that it each to use
-- Providing model explanations
-- Removing bias in the selection phase
-- Model monitoring
+- Enhancing the model to provide recommendations for alternative wording
+- Incorporating the model recommendations into existing workflows for creating job advertisements
+- Providing model explanations so that users are more likely to understand and accept recommendations
+- Placing the improved advertisements in appropriate media for reaching a diverse audience
+- Removing bias in the selection phase through blind selection, competency based interviews and unconscious bias training
+- On-going model monitoring to understand its overall performance and acceptance by end users
 
 
-Finally, there are limitations to note. These are them. But remember, this is indicative of technology solutions are no the be all and end all. 
+Finally, in this assignment we considered several limitations of the model. Many of these relate to model enhancements already considered (i.e. making recommendations), however two of the limitations do place a hard limit on what the proposed solution can achieve. The first of these is that the strongest factor influencing a sense of belongingness (and therefore likelihood to apply) are gender stereotypes about which types of roles are suited to which genders. The second of these is that some gendered language may be necessary for accurately advertising the position, and that changing this gendered language may create misleading/inaccurate job advertisements. While these limitations do not prevent the solution from making a difference, they are limitations we should take into account to be realistic about what the solution can achieve.
+
+</br>
+
+Overall, there is potential through a data science solution to address the discrimination that can be embedded in job advertisements through gendered language. While there are some hard limitations on what can be achieved, it would be possible through an improved model and process to make a difference.
