@@ -59,3 +59,16 @@ evaluate:
       md5: 52e5bebf2588da236ab5a386ec58ede0
   spacy_version: 3.3.1
   spacy_git_version: 5fb597f77
+package:
+  cmd: python -m spacy run package
+  script:
+    - python -m spacy package training/model-best packages --name gendered_job_advertisements
+      --version 0.0.0 --build wheel
+  deps:
+    - path: training/model-best
+      md5: b80f096ea491d3ff16c46c494a8af577
+  outs:
+    - path: packages/en_gendered_job_advertisements-0.0.0/dist/en_gendered_job_advertisements-0.0.0.whl
+      md5: null
+  spacy_version: 3.3.1
+  spacy_git_version: 5fb597f77

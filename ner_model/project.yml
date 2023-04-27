@@ -1,8 +1,8 @@
 title: "DATA 417 project"
-description: "Identifying discrimination in job advertisements"
+description: "Identifying gendered language in job advertisements"
 # Variables can be referenced across the project.yml using ${vars.var_name}
 vars:
-  name: "job_discrimination"
+  name: "gendered_job_advertisements"
   lang: "en"
   train: "train.json"
   dev: "dev.json"
@@ -34,6 +34,7 @@ workflows:
     - train
     # - train-with-vectors
     - evaluate
+    - package
 
 # Project commands, specified in a style similar to CI config files (e.g. Azure
 # pipelines). The name is the command name that lets you trigger the command
@@ -99,16 +100,9 @@ commands:
   - name: package
     help: "Package the trained model as a pip package"
     script:
-      - "python -m spacy package training/model-best packages --name ${vars.name} --version ${vars.version} --force"
+      - "python -m spacy package training/model-best packages --name ${vars.name} --version ${vars.version} --build wheel"
     deps:
       - "training/model-best"
     outputs_no_cache:
-      - "packages/${vars.lang}_${vars.name}-${vars.version}/dist/${vars.lang}_${vars.name}-${vars.version}.tar.gz"
+      - "packages/${vars.lang}_${vars.name}-${vars.version}/dist/${vars.lang}_${vars.name}-${vars.version}.whl"
 
-  - name: visualize-model
-    help: Visualize the model's output interactively using Streamlit
-    script:
-      - "streamlit run scripts/visualize_model.py training/model-best \"I saw Shaka Khan in London.\""
-    deps:
-      - "scripts/visualize_model.py"
-      - "training/model-best"
