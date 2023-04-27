@@ -264,15 +264,13 @@ To manage this, there will need to be at the very least a human in the loop to m
 
 
 ## Conclusion
-Gendered language in job advertisements can impact on both individuals and employers in a negative way. This assignment has leveraged natural language processing to identify gendered terms and suggested design for an overall system that utilises this model to address the original ethical concern. 
+Gendered language in job advertisements can impact on both individuals and employers in a negative way. This assignment has created an NER model to identify gendered terms and proposed a design for an overall system that utilises this model to address the original ethical concern. This overall system proposes improvements to the model, non-technology interventions in the recruitment process to mitigate bias and also responsible AI design features. Some of the key features of this overall solution are: 
+- Enhancing model predictions to be more sensitive to the context in which masculine and feminine terms are used
+- Enhancing the model to providie recommendations for alternative wording
+- Incorporating the model recommendations into existing workflows so that it each to use
+- Providing model explanations
+- Removing bias in the selection phase
+- Model monitoring
 
-The model identifies gendered language in advertisement 
-
-There is room for future improvement of the model, including:
-- Providing recommendations for alternative wording
-- Being more sensitive to the context in which masculine and feminine terms are used
-- Taking into account a wider range of terms
-= Weighting terms
-- Further?
 
 Finally, there are limitations to note. These are them. But remember, this is indicative of technology solutions are no the be all and end all. 
