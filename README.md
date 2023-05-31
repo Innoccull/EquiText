@@ -211,29 +211,18 @@ There are a number of other measures that can be taken to create a holistic solu
 Responsible AI design requires that we should design models that are transparent, fair, accountable, and respect prviacy/security. Here we incldue some additional design features to ensure that the proposed system aligns with these responsible AI principles. 
 
 **A human in the loop**
-</br>
 It is often advisable that there is a 'human in the loop' in the use of an AI system. This ensures firstly that there is a check on the model's recommendations, there can be a human sanity check on what the model is producing as opposed to blindly following recommendations. In addition to this it provides an element of accountability in the design whereby a human is ultimately making the decision on language used in the advertisement. 
 
 Within our system, we can include that a human would review and correct gendered language in advertisements based on the information presented to them. We would also ideally be able to present to the human reviewer the gendered language, why that language was identified and a suggested replacement. The human could decide what to update and what not to update based on the model's recommendations.
 
-</br>
-
 **Explaining model predictions**
-
-</br>
-
 To promote transparency, we will want to be able to clearly explain model predictions. In the context of this assignment, this will involve clearly explaining why language has been identified as gendered and how that gendered language would impact on individuals. 
 
 This can be achieved in two ways. Firstly a library such as SHAP or LIME could be used to generate explanations for predictions. These libraries will provide an overview of the important features and their relative weighting for predictions made. In the context of NER, this will show which of the surrounding words influenced the prediction and their relative weights.
 
 In addition to this, it may be possible to produce a knowledge base that allows for explanation of the way in which a gendered term can impact on job advertisements. For example, some words might impact through reinforcing underlying gender stereotypes for professions and be accompanied with such an explanation when identified as gendered.
 
-</br>
-
 **Model monitoring**
-
-</br>
-
 Finally we will want to include monitoring of the model to help promote transparency and continued improvement of the model's prediction through feedback. Monitoring of the model could include:
 - Measure the amount of times that a user takes the advice of the model and rejects the advice of the model so that we can understand whether the advice presented is useful to users
 - Measure the gender target score before and after user updates based on model advice so that we can see that the model is producing improved advertisements
@@ -243,6 +232,19 @@ Finally we will want to include monitoring of the model to help promote transpar
 The image below provides an overall view of the solution design, taking into account all the design considerations above.
 
 ![](/assets/overall_solution.jpg)
+
+#### Web Application
+A web application proof of concept was developed to demonstrate the model. This web application can be accessed at the link below.
+http://databa.pythonanywhere.com/
+
+The web application presents the user with the ability to enter the text for a job advertisement.
+
+![](/assets/web_app.jpg)
+
+Upon selecting 'Run Model', the user is presented with the masculine and feminine entities identified in the text provided and some core statistics relating to the advertisement.
+
+![](/assets/web_app_example_entry.jpg)
+
 
 
 ## Limitations

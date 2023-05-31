@@ -2,19 +2,21 @@
 import dash
 import dash_bootstrap_components as dbc
 from dash import Input, Output, State, dcc, html
-import dash_renderjson
 from dash import dash_table
 
 import spacy
 from spacy import displacy
 import pandas as pd
-import json
-import os
 import math
 
 app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP],suppress_callback_exceptions=True)
 
+# Load model
 nlp = spacy.load("app\\ner_model")
+
+# Settings for producing displacy images
+colors = {"MAS": "linear-gradient(120deg, #a1c4fd, #a1c4fd)", "FEM": "linear-gradient(120deg, #fdcbf1, #fdcbf1)"}
+options = {"ents": ["MAS", "FEM"], "colors": colors}
 
 # Function to get spacy doc summary stats
 def get_doc_stats(doc):
@@ -34,14 +36,14 @@ def get_doc_stats(doc):
 
 
     result = {
-        'total': total_tokens,
-        'total_masculine': total_masculine,
-        'total_feminine': total_feminine,
-        'pct_masculine': round(total_masculine/total_tokens, 4),
-        'pct_feminine': round(total_feminine/total_tokens, 4),
-        'masc_ents': [ent.text for ent in doc.ents if ent.label_ == "MAS"],
-        'fem_ents' : [ent.text for ent in doc.ents if ent.label_ == "FEM"],
-        'gt_score' : gt_score
+        'Total Words': total_tokens,
+        'Total Masculine Entities': total_masculine,
+        'Total Feminine Entities': total_feminine,
+        'Percentage Words Masculine': round(total_masculine/total_tokens, 4),
+        'Percentage Words Feminine': round(total_feminine/total_tokens, 4),
+        'Masculine Entities': [ent.text for ent in doc.ents if ent.label_ == "MAS"],
+        'Feminine Entities' : [ent.text for ent in doc.ents if ent.label_ == "FEM"],
+        'Gender Target Score' : gt_score
     }
 
     return result
@@ -81,7 +83,7 @@ app.layout = dbc.Container(
         [
             dbc.Button("Show", id="btn-output", color="white", n_clicks=0)
         ],
-        brand="Model Output",
+        brand="Entities Identified",
         color="white",
         style={'width' : '100%'}
         ),
@@ -96,14 +98,13 @@ app.layout = dbc.Container(
         [
             dbc.Button("Show", id="btn-stats", color="white", n_clicks=0)
         ],
-        brand="Statistics",
+        brand="Model Output",
         color="white",
         style={'width' : '100%'}
         ),
     dbc.Collapse(children=
         [
-            html.Div(id='doc-stats'),
-            html.Div(id='table', )
+            html.Div(id='table')
         ],
         id="collapse-stats",
         is_open=False
@@ -144,41 +145,42 @@ def toggle_collapse(n, is_open):
         return not is_open
     return is_open
 
-@app.callback([Output('displacy-image', 'children'),
-              Output('doc-stats', 'children')],
+@app.callback(Output('displacy-image', 'children'),
               Input('run_model', 'n_clicks'),
               State('job_description', 'value'))
 def update_displacy(n_clicks, value):
     
+
+    if n_clicks is not None:
     # Create doc object
-    text = value
-    doc = nlp(text)
+        text = value
+        doc = nlp(text)
 
-    # Create displacy visualisation
-    html_doc = displacy.render(doc, style="ent")
-    disp = dcc.Markdown([html_doc], dangerously_allow_html=True)
+        # Create displacy visualisation
+        html_doc = displacy.render(doc, style="ent", options=options)
+        disp = dcc.Markdown([html_doc], dangerously_allow_html=True)
 
-    # Create summary statistics
-    stats = dash_renderjson.DashRenderjson(id='input',  data=get_doc_stats(doc), max_depth=3)
+    return (disp)
 
-    return (disp, stats)
-
-@app.callback([Output('table', 'children')],
-              Input('run_model', 'n_clicks'),
-              State('job_description', 'value'))
+@app.callback(Output('table', 'children'),
+              [Input('run_model', 'n_clicks'),
+              State('job_description', 'value')])
 def update_table(n_clicks, value):
 
-    # Create doc object
-    text = value
-    doc = nlp(text)
+    if n_clicks is not None:
 
-    data=get_doc_stats(doc)
+        # Create doc object
+        text = value
+        doc = nlp(text)
 
-    df = pd.json_normalize(data)
+        data=get_doc_stats(doc)
 
-    print(df)
+        df = pd.json_normalize(data)
+        df = df.transpose()
+        df = df.reset_index()
+        df.columns = ["Attribute", "Value"]
 
-    return (dbc.Table.from_dataframe(df))
+        return (dbc.Table.from_dataframe(df))
 
 if __name__ == "__main__":
     app.run_server()
