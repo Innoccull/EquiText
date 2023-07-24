@@ -2,7 +2,7 @@
 
 This repository includes the code and report for an assignment for the course DAT417 - The Trustworthy Data Scientist, completed as part of a Master of Applied Data Science.
 
-The assignment called for addressing an ethical concern with the use of a data science solution. The solution developed was a named entity recognition model that detects and highlights gendered lamguage in job advertisements so that it can potentially be adjusted. Previous research has shown that gendered language in job advertisements can discourage applicants from applying, leading to a less diverse candidate pool for employers to choose from.
+The assignment called for addressing an ethical concern with the use of a data science solution. The solution developed was a named entity recognition model that detects and highlights gendered lamguage in job advertisements so that it can potentially be adjusted. Previous research has shown that gendered language in job advertisements can discourage applicants from applying, leading to a less diverse candidate pool for employers to choose from and missed opportunities for individual applicants.
 
 The solution developed includes:
 - a named entity recognition model developed in spacy that identifies if a term is masculine or feminine in the context of job advertisements
