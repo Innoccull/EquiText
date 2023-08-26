@@ -18,41 +18,23 @@ Jump to section:
 
 _Basic information about the model._
 
-Review section 4.1 of the [model cards paper](https://arxiv.org/abs/1810.03993).
-
-- Person or organization developing model
-- Model date
-- Model version
-- Model type
-- Information about training algorithms, parameters, fairness constraints or other applied
-  approaches, and features
-- Paper or other resource for more information
-- Citation details
-- License
-- Where to send questions or comments about the model
+- This model was developed by Chris Rodgers (supervised by Giulio Dalla Riva) for an assignment completed as part of DATA 417 - The Ethical data scientist
+- Natural Language Model trained using spaCy to identify named entities in job advertisements as either masculine or feminine
+- Assigns a gender target score to identify whether the job advertisement overall is more masucline, feminine or blanced
+- Contact chrisrodgersba@gmail.com for any queries
 
 ## Intended use
 
-_Use cases that were envisioned during development._
-
-Review section 4.2 of the [model cards paper](https://arxiv.org/abs/1810.03993).
-
-### Primary intended uses
-
-### Primary intended users
-
-### Out-of-scope use cases
+- Intended to support authors of job advertisements to write their advertisements in a way that does not discourage specific applicants based on gender identity
+- Should be used to advice only to writers on how their job advertisements may be received, authors should not automatically replace wprds identified as masculine or feminine.
+- Should not be used in contexts outside of job advertisements (e.g. general advertising text, online forum comments)
 
 ## Factors
 
 _Factors could include demographic or phenotypic groups, environmental conditions, technical
 attributes, or others listed in Section 4.3._
 
-Review section 4.3 of the [model cards paper](https://arxiv.org/abs/1810.03993).
-
-### Relevant factors
-
-### Evaluation factors
+- Gender identity (binary male and female) was taken into consideration for identifying gendered langauge.
 
 ## Metrics
 
@@ -60,8 +42,6 @@ _The appropriate metrics to feature in a model card depend on the type of model 
 For example, classification systems in which the primary output is a class label differ significantly
 from systems whose primary output is a score. In all cases, the reported metrics should be determined
 based on the model’s structure and intended use._
-
-Review section 4.4 of the [model cards paper](https://arxiv.org/abs/1810.03993).
 
 ### Model performance measures
 
