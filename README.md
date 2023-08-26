@@ -15,4 +15,4 @@ assignment_report.md provides a full account of the development of the solution,
 - how the effectiveness of the solution was assessed
 - consideration of what beyond the named entity recognition should be implemented to address the ethical concern
 
-The web application develop can be viewed [http://databa.pythonanywhere.com/]here.
+The web application develop can be viewed [http://databa.pythonanywhere.com/] here.
