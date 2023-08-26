@@ -15,4 +15,6 @@ assignment_report.md provides a full account of the development of the solution,
 - how the effectiveness of the solution was assessed
 - consideration of what beyond the named entity recognition should be implemented to address the ethical concern
 
-The web application develop can be viewed [here](http://databa.pythonanywhere.com/).
+The web application developed can be viewed [here](http://databa.pythonanywhere.com/).
+
+The model card can be viewed [here](https://github.com/Innoccull/identifying_gendered_language/blob/main/model_card.md).
