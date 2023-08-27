@@ -1,8 +1,8 @@
 # EquiText
 
-EquiText is a Natural Language Processing model that identifies gendered terms and assigns an overall gender target score to job advertisements. 
+Research shows that gendered language in job advertisements can discourage individuals from applying, reducing the pool of talent available to advertisers. EquiText is a Natural Language Processing model that identifies gendered terms in job advertisemetns and assigns an overall gender target score to the advertisement based on the terms identified. 
 
-Research shows that gendered language in job advertisements can discourage individuals from applying, reducing the pool of talent available to advertisers. EquiText enables employers to understand how their job advertisements could be perceived by applicants and choose whether or not to adapt the language used in their advertisement accordingly.
+EquiText enables employers to understand how their job advertisements could be perceived by applicants and choose whether or not to adapt the language used in their advertisement accordingly, thereby increasing the likelihood of a larger and more diverse talent pool to choose from when advertising.
 
 EquiText can be used [here](http://databa.pythonanywhere.com/).
 
