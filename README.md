@@ -9,6 +9,7 @@ EquiText can be used [here](http://databa.pythonanywhere.com/).
 ---
 
 **Background**
+
 EquiText was developed as an assignment for the course DAT417 - The Trustworthy Data Scientist, completed as part of a Master of Applied Data Science at the University of Canterbury, New Zealand.
 
 The assignment called for addressing an ethical concern with the use of a data science solution. The solution developed was a named entity recognition model that detects and highlights gendered lamguage in job advertisements so that they can potentially be adjusted. Previous research has shown that gendered language in job advertisements can discourage applicants from applying, leading to a less diverse candidate pool for employers to choose from and missed opportunities for individual applicants.
